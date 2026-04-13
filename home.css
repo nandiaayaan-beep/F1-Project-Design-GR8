@@ -14,12 +14,8 @@
     z-index: 100;
     opacity: 0;
     transform: translateY(-20px);
+    background: transparent;
     animation: fadeIn 0.8s ease forwards, fadeDown 0.8s ease forwards;
-    background: linear-gradient(135deg, rgba(38, 38, 38, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
-    linear-gradient(225deg, rgba(27, 26, 26, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
-    linear-gradient(315deg, rgba(54, 52, 52, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
-    linear-gradient(45deg, rgba(34, 34, 34, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
-    #111;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -446,22 +442,22 @@ footer {
 }
 
 .notebox1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
 }
 
 .notebox2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
 }
 
 .notebox3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
 }
 
 .notebox4 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
 }
 
