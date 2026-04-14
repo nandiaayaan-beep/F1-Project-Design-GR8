@@ -36,14 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let current = 0;
   let isAnimating = false;
 
-
   function updateAlts() {
     if (caption) {
       caption.textContent = altTexts[current];
-    }
-
-    if (header) {
-      header.setAttribute('aria-label', altTexts[current]);
     }
   }
 
@@ -75,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const previousIndex = current;
-    current = index;
     current = index;
     if (current === 0) {
       console.log('Current image = 1');

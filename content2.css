@@ -1,26 +1,25 @@
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  background: transparent;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 100;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeIn 0.8s ease forwards, fadeDown 0.8s ease forwards;
-  background: linear-gradient(135deg, rgba(38, 38, 38, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
-  linear-gradient(225deg, rgba(27, 26, 26, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
-  linear-gradient(315deg, rgba(54, 52, 52, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
-  linear-gradient(45deg, rgba(34, 34, 34, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
-  #111;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index: 100;
+    transform: translateY(-20px);
+    animation: fadeIn 0.8s ease forwards, fadeDown 0.8s ease forwards;
+    background: linear-gradient(135deg, rgba(38, 38, 38, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
+    linear-gradient(225deg, rgba(27, 26, 26, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
+    linear-gradient(315deg, rgba(54, 52, 52, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
+    linear-gradient(45deg, rgba(34, 34, 34, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
+    #111;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled {
@@ -165,23 +164,26 @@ html, body {
       z-index: -1;
 }
 
+.padding {
+  padding-top: 40px;
+}
+
 .timelineitem {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     gap: 20px;
-    align-items: first baseline;
-    margin-bottom: 15px;
-    padding-top: 4em;
+    margin-bottom: 20px;
 }
 .timelinepair {
     text-align: left;
-    gap: 10px;
-    width: 22%;
-    max-width: 22%;
-    min-height: 11%;
-    height: 11%;
+    gap: 20px;
+    width: 25%;
+    max-width: 25%;
+    height: 45%;
+    max-height: 45%;
+    min-width: 0;
     align-items: flex-start;
     background-color: rgba(30, 30, 30, 0.1);
     background-image: url('1950firstgp.jpg');
@@ -193,12 +195,15 @@ html, body {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    justify-content: space-evenly;
 }
-
 .timelinep {
     position: relative;
     padding-top: 2px;
-    max-width: 52ch;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .timelinepdate {
@@ -211,11 +216,194 @@ html, body {
     animation: fadeUp 0.8s ease forwards;
 }
 
-.header4 {
-    border-bottom: 2px solid white;
-    padding-bottom: 10px;
-    font-family: 'Bebas Neue', sans-serif;
-    text-align: center;
+/* Individual timelinepair classes with full styling */
+.timelinepair1, .timelinepair2, .timelinepair3, .timelinepair4,
+.timelinepair5, .timelinepair6, .timelinepair7, .timelinepair8,
+.timelinepair9, .timelinepair10, .timelinepair11, .timelinepair12,
+.timelinepair13, .timelinepair14, .timelinepair15, .timelinepair16,
+.timelinepair17, .timelinepair18, .timelinepair19, .timelinepair20,
+.timelinepair21, .timelinepair22 {
+    text-align: left;
+    gap: 20px;
+    width: 25%;
+    max-width: 25%;
+    height: 45%;
+    max-height: 45%;
+    min-width: 0;
+    align-items: flex-start;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-evenly;
+    transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, filter 0.35s ease-out;
+}
+
+/* Mercedes - boxes 1-2 */
+.timelinepair1, .timelinepair2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
+}
+
+.timelinepair1:hover, .timelinepair1:focus-within,
+.timelinepair2:hover, .timelinepair2:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Ferrari - boxes 3-4 */
+.timelinepair3, .timelinepair4 {
+    background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
+}
+
+.timelinepair3:hover, .timelinepair3:focus-within,
+.timelinepair4:hover, .timelinepair4:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(220, 0, 0, 0.95), 0 0 8px rgba(220, 0, 0, 0.95), 0 0 16px rgba(220, 0, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* McLaren - boxes 5-6 */
+.timelinepair5, .timelinepair6 {
+    background: linear-gradient(rgba(255, 135, 0, 0.2), rgba(255, 135, 0, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 135, 0, 0.6);
+}
+
+.timelinepair5:hover, .timelinepair5:focus-within,
+.timelinepair6:hover, .timelinepair6:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 135, 0, 0.95), 0 0 8px rgba(255, 135, 0, 0.95), 0 0 16px rgba(255, 135, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Haas - boxes 7-8 */
+.timelinepair7, .timelinepair8 {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
+}
+
+.timelinepair7:hover, .timelinepair7:focus-within,
+.timelinepair8:hover, .timelinepair8:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Alpine - boxes 9-10 */
+.timelinepair9, .timelinepair10 {
+    background: linear-gradient(rgba(0, 100, 150, 0.2), rgba(0, 100, 150, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 100, 150, 0.6);
+}
+
+.timelinepair9:hover, .timelinepair9:focus-within,
+.timelinepair10:hover, .timelinepair10:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 100, 150, 0.95), 0 0 8px rgba(0, 100, 150, 0.95), 0 0 16px rgba(0, 100, 150, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Red Bull Racing - boxes 11-12 */
+.timelinepair11, .timelinepair12 {
+    background: linear-gradient(rgba(1, 33, 124, 0.25), rgba(1, 33, 124, 0.25)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(1, 33, 124, 0.6);
+}
+
+.timelinepair11:hover, .timelinepair11:focus-within,
+.timelinepair12:hover, .timelinepair12:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(1, 33, 124, 0.95), 0 0 8px rgba(1, 33, 124, 0.95), 0 0 16px rgba(1, 33, 124, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Racing Bulls - boxes 13-14 */
+.timelinepair13, .timelinepair14 {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
+}
+
+.timelinepair13:hover, .timelinepair13:focus-within,
+.timelinepair14:hover, .timelinepair14:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(51, 51, 51, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Audi - boxes 15-16 */
+.timelinepair15, .timelinepair16 {
+    background: linear-gradient(rgba(206, 18, 18, 0.2), rgba(206, 18, 18, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(206, 18, 18, 0.6);
+}
+
+.timelinepair15:hover, .timelinepair15:focus-within,
+.timelinepair16:hover, .timelinepair16:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(206, 18, 18, 0.95), 0 0 8px rgba(206, 18, 18, 0.95), 0 0 16px rgba(206, 18, 18, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Williams - boxes 17-18 */
+.timelinepair17, .timelinepair18 {
+    background: linear-gradient(rgba(0, 120, 191, 0.2), rgba(0, 120, 191, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 120, 191, 0.6);
+}
+
+.timelinepair17:hover, .timelinepair17:focus-within,
+.timelinepair18:hover, .timelinepair18:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 120, 191, 0.95), 0 0 8px rgba(0, 120, 191, 0.95), 0 0 16px rgba(0, 120, 191, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Cadillac - boxes 19-20 */
+.timelinepair19, .timelinepair20 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
+}
+
+.timelinepair19:hover, .timelinepair19:focus-within,
+.timelinepair20:hover, .timelinepair20:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Aston Martin - boxes 21-22 */
+.timelinepair21, .timelinepair22 {
+    background: linear-gradient(rgba(0, 150, 0, 0.2), rgba(0, 150, 0, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 150, 0, 0.6);
+}
+
+.timelinepair21:hover, .timelinepair21:focus-within,
+.timelinepair22:hover, .timelinepair22:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 150, 0, 0.95), 0 0 8px rgba(0, 150, 0, 0.95), 0 0 16px rgba(0, 150, 0, 0.95);
+    filter: brightness(1.08);
 }
 
 @keyframes fadeIn {

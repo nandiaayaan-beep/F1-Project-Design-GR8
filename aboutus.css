@@ -12,7 +12,6 @@
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   z-index: 100;
-  opacity: 0;
   transform: translateY(-20px);
   animation: fadeIn 0.8s ease forwards, fadeDown 0.8s ease forwards;
   background: linear-gradient(135deg, rgba(38, 38, 38, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
