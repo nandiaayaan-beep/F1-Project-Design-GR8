@@ -147,8 +147,8 @@ html, body {
     margin-top: 50px;
     justify-content: space-evenly;
     flex-direction: column;
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 10%;
+    padding-left: 10%;
     background: repeating-linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.05) 0px,
@@ -176,23 +176,23 @@ html, body {
     padding-top: 4em;
 }
 .timelinepair {
-    text-align: center;
+    text-align: left;
     gap: 10px;
-    padding-top: 50px;
-    max-width: 25%;
-    max-height: auto;
-    align-items: first baseline;
+    width: 22%;
+    max-width: 22%;
+    min-height: 11%;
+    height: 11%;
+    align-items: flex-start;
     background-color: rgba(30, 30, 30, 0.1);
+    background-image: url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
     border-radius: 12px;
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 8px 32px rgba(255,255,255, 0.1);
     padding: 10px;
-}
-
-.timelineimage {
-    max-width: 100%;
-    max-height: 56.25%;
-    transform: translateY(15%);
+    display: flex;
+    flex-direction: column;
 }
 
 .timelinep {
@@ -205,6 +205,10 @@ html, body {
     font-weight: bold;
     position: relative;
     padding-top: 10px;
+}
+
+.timelineitem {
+    animation: fadeUp 0.8s ease forwards;
 }
 
 .header4 {
