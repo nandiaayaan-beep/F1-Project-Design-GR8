@@ -189,6 +189,180 @@ html, body {
     font-weight: bold;
     position: relative;
     padding-top: 10px;
+    font-family: 'orbitron', sans-serif;
+    text-shadow:
+      0 0 4px rgba(205, 2, 2, 0.8),
+      0 0 8px rgba(205, 2, 2, 0.8),
+      0 0 16px rgba(205, 2, 2, 0.8);
+    font-size: 17px;
+}
+
+/* Team-specific timelinepdate glow colors */
+.timelinepair1 .timelinepdate, .timelinepair2 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(192, 192, 192, 0.95),
+      0 0 8px rgba(192, 192, 192, 0.95),
+      0 0 16px rgba(192, 192, 192, 0.95);
+}
+
+.timelinepair3 .timelinepdate, .timelinepair4 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(220, 0, 0, 0.95),
+      0 0 8px rgba(220, 0, 0, 0.95),
+      0 0 16px rgba(220, 0, 0, 0.95);
+}
+
+.timelinepair5 .timelinepdate, .timelinepair6 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(255, 135, 0, 0.95),
+      0 0 8px rgba(255, 135, 0, 0.95),
+      0 0 16px rgba(255, 135, 0, 0.95);
+}
+
+.timelinepair7 .timelinepdate, .timelinepair8 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(0, 0, 0, 0.95),
+      0 0 8px rgba(0, 0, 0, 0.95),
+      0 0 16px rgba(0, 0, 0, 0.95);
+}
+
+.timelinepair9 .timelinepdate, .timelinepair10 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(0, 100, 150, 0.95),
+      0 0 8px rgba(0, 100, 150, 0.95),
+      0 0 16px rgba(0, 100, 150, 0.95);
+}
+
+.timelinepair11 .timelinepdate, .timelinepair12 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(1, 33, 124, 0.55),
+      0 0 8px rgba(1, 33, 124, 0.55),
+      0 0 16px rgba(1, 33, 124, 0.55);
+}
+
+.timelinepair13 .timelinepdate, .timelinepair14 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(0, 0, 0, 0.95),
+      0 0 8px rgba(0, 0, 0, 0.95),
+      0 0 16px rgba(0, 0, 0, 0.95);
+}
+
+.timelinepair15 .timelinepdate, .timelinepair16 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(206, 18, 18, 0.95),
+      0 0 8px rgba(206, 18, 18, 0.95),
+      0 0 16px rgba(206, 18, 18, 0.95);
+}
+
+.timelinepair17 .timelinepdate, .timelinepair18 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(0, 120, 191, 0.95),
+      0 0 8px rgba(0, 120, 191, 0.95),
+      0 0 16px rgba(0, 120, 191, 0.95);
+}
+
+.timelinepair19 .timelinepdate, .timelinepair20 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(192, 192, 192, 0.95),
+      0 0 8px rgba(192, 192, 192, 0.95),
+      0 0 16px rgba(192, 192, 192, 0.95);
+}
+
+.timelinepair21 .timelinepdate, .timelinepair22 .timelinepdate {
+    text-shadow:
+      0 0 4px rgba(0, 150, 0, 0.95),
+      0 0 8px rgba(0, 150, 0, 0.95),
+      0 0 16px rgba(0, 150, 0, 0.95);
+}
+
+.team-name {
+    font-weight: bold;
+    position: relative;
+    font-family: 'orbitron', sans-serif;
+    padding-top: 10px;
+    text-shadow:
+      0 0 4px rgba(205, 2, 2, 0.8),
+      0 0 8px rgba(205, 2, 2, 0.8),
+      0 0 16px rgba(205, 2, 2, 0.8);
+    font-size: 22px;
+}
+
+/* Team-specific team-name glow colors */
+.timelinepair1team .team-name {
+    text-shadow:
+      0 0 4px rgba(192, 192, 192, 0.95),
+      0 0 8px rgba(192, 192, 192, 0.95),
+      0 0 16px rgba(192, 192, 192, 0.95);
+}
+
+.timelinepair3team .team-name {
+    text-shadow:
+      0 0 4px rgba(220, 0, 0, 0.95),
+      0 0 8px rgba(220, 0, 0, 0.95),
+      0 0 16px rgba(220, 0, 0, 0.95);
+}
+
+.timelinepair5team .team-name {
+    text-shadow:
+      0 0 4px rgba(255, 135, 0, 0.95),
+      0 0 8px rgba(255, 135, 0, 0.95),
+      0 0 16px rgba(255, 135, 0, 0.95);
+}
+
+.timelinepair7team .team-name {
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.95),
+      0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 16px rgba(255, 255, 255, 0.95);
+}
+
+.timelinepair9team .team-name {
+    text-shadow:
+      0 0 4px rgba(0, 100, 150, 0.95),
+      0 0 8px rgba(0, 100, 150, 0.95),
+      0 0 16px rgba(0, 100, 150, 0.95);
+}
+
+.timelinepair11team .team-name {
+    text-shadow:
+      0 0 4px rgba(1, 33, 124, 0.95),
+      0 0 8px rgba(1, 33, 124, 0.95),
+      0 0 16px rgba(1, 33, 124, 0.95);
+}
+
+.timelinepair13team .team-name {
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.95),
+      0 0 8px rgba(255, 255, 255, 0.95),
+      0 0 16px rgba(255, 255, 255, 0.95);
+}
+
+.timelinepair15team .team-name {
+    text-shadow:
+      0 0 4px rgba(206, 18, 18, 0.95),
+      0 0 8px rgba(206, 18, 18, 0.95),
+      0 0 16px rgba(206, 18, 18, 0.95);
+}
+
+.timelinepair17team .team-name {
+    text-shadow:
+      0 0 4px rgba(0, 120, 191, 0.95),
+      0 0 8px rgba(0, 120, 191, 0.95),
+      0 0 16px rgba(0, 120, 191, 0.95);
+}
+
+.timelinepair19team .team-name {
+    text-shadow:
+      0 0 4px rgba(192, 192, 192, 0.95),
+      0 0 8px rgba(192, 192, 192, 0.95),
+      0 0 16px rgba(192, 192, 192, 0.95);
+}
+
+.timelinepair21team .team-name {
+    text-shadow:
+      0 0 4px rgba(0, 150, 0, 0.95),
+      0 0 8px rgba(0, 150, 0, 0.95),
+      0 0 16px rgba(0, 150, 0, 0.95);
 }
 
 .timelineitem {
@@ -218,8 +392,22 @@ html, body {
     overflow: hidden;
     justify-content: space-evenly;
     transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, filter 0.35s ease-out;
+    position: relative;
 }
 
+.driver-flag {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #002395 0%, #002395 33.33%, #FFFFFF 33.33%, #FFFFFF 66.67%, #ED2939 66.67%, #ED2939 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+/* BACKGROUND IMAGE SET HERE: url('1950firstgp.jpg') */
 /* Mercedes - boxes 1-2 */
 .timelinepair1, .timelinepair2 {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
@@ -384,6 +572,167 @@ html, body {
     box-shadow: 0 0 4px rgba(0, 150, 0, 0.95), 0 0 8px rgba(0, 150, 0, 0.95), 0 0 16px rgba(0, 150, 0, 0.95);
     filter: brightness(1.08);
 }
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* TEAM ITEMS START FROM HERE */
+/* Mercedes - team */
+.timelinepair1team {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
+}
+
+.timelinepair1team:hover, .timelinepair1team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Ferrari - team */
+.timelinepair3team {
+    background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
+}
+
+.timelinepair3team:hover, .timelinepair3team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(220, 0, 0, 0.95), 0 0 8px rgba(220, 0, 0, 0.95), 0 0 16px rgba(220, 0, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* McLaren - team */
+.timelinepair5team {
+    background: linear-gradient(rgba(255, 135, 0, 0.2), rgba(255, 135, 0, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 135, 0, 0.6);
+}
+
+.timelinepair5team:hover, .timelinepair5team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 135, 0, 0.95), 0 0 8px rgba(255, 135, 0, 0.95), 0 0 16px rgba(255, 135, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Haas - team */
+.timelinepair7team {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
+}
+
+.timelinepair7team:hover, .timelinepair7team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Alpine - team */
+.timelinepair9team {
+    background: linear-gradient(rgba(0, 100, 150, 0.2), rgba(0, 100, 150, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 100, 150, 0.6);
+}
+
+.timelinepair9team:hover, .timelinepair9team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 100, 150, 0.95), 0 0 8px rgba(0, 100, 150, 0.95), 0 0 16px rgba(0, 100, 150, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Red Bull Racing - team */
+.timelinepair11team {
+    background: linear-gradient(rgba(1, 33, 124, 0.25), rgba(1, 33, 124, 0.25)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(1, 33, 124, 0.6);
+}
+
+.timelinepair11team:hover, .timelinepair11team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(1, 33, 124, 0.95), 0 0 8px rgba(1, 33, 124, 0.95), 0 0 16px rgba(1, 33, 124, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Racing Bulls - team */
+.timelinepair13team {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
+}
+
+.timelinepair13team:hover, .timelinepair13team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(51, 51, 51, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Audi - team */
+.timelinepair15team {
+    background: linear-gradient(rgba(206, 18, 18, 0.2), rgba(206, 18, 18, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(206, 18, 18, 0.6);
+}
+
+.timelinepair15team:hover, .timelinepair15team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(206, 18, 18, 0.95), 0 0 8px rgba(206, 18, 18, 0.95), 0 0 16px rgba(206, 18, 18, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Williams - team */
+.timelinepair17team {
+    background: linear-gradient(rgba(0, 120, 191, 0.2), rgba(0, 120, 191, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 120, 191, 0.6);
+}
+
+.timelinepair17team:hover, .timelinepair17team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 120, 191, 0.95), 0 0 8px rgba(0, 120, 191, 0.95), 0 0 16px rgba(0, 120, 191, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Cadillac - team */
+.timelinepair19team {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
+}
+
+.timelinepair19team:hover, .timelinepair19team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Aston Martin - team */
+.timelinepair21team {
+    background: linear-gradient(rgba(0, 150, 0, 0.2), rgba(0, 150, 0, 0.2)), url('1950firstgp.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 150, 0, 0.6);
+}
+
+.timelinepair21team:hover, .timelinepair21team:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 150, 0, 0.95), 0 0 8px rgba(0, 150, 0, 0.95), 0 0 16px rgba(0, 150, 0, 0.95);
+    filter: brightness(1.08);
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -423,9 +772,8 @@ html, body {
     text-align: left;
     gap: 20px;
     width: 50%;
-    max-width: 50%;
-    height: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    height: 200px;
     min-width: 0;
     align-items: flex-start;
     border-radius: 12px;
@@ -434,8 +782,32 @@ html, body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    justify-content: space-evenly;
+    justify-content: center;
     transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, filter 0.35s ease-out;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.team-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-paragraph {
+  max-width: 100%;
+  color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 @keyframes glowPulse {
