@@ -173,6 +173,20 @@ html, body {
   gap: 12px;
 }
 
+.driver-card__body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.driver-card__body > .trophy-icon {
+  font-size: 24px;
+}
+
+.driver-card__body > .driver-position {
+  font-size: 24px;
+}
+
 .driver-avatar{
   width: 80px;
   height: 80px;
@@ -186,6 +200,7 @@ html, body {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  transform: translateY(20px);
 }
 
 @keyframes fadeIn {
