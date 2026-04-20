@@ -114,6 +114,8 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 html, body {
   margin: 0;
   padding-bottom: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .html {
@@ -131,9 +133,7 @@ html, body {
 
 .drivers-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 24px;
   background: repeating-linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.05) 0px,
@@ -149,11 +149,137 @@ html, body {
         border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
+.drivers-grid--hover-hamilton {
+  border: 2px solid rgba(0, 212, 170, 0.8);
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.3), inset 0 0 15px rgba(0, 212, 170, 0.1);
+}
+
+.drivers-grid--hover-verstappen {
+  border: 2px solid rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3), inset 0 0 15px rgba(255, 0, 0, 0.1);
+}
+
+.drivers-grid--hover-senna {
+  border: 2px solid rgba(255, 130, 0, 0.8);
+  box-shadow: 0 0 20px rgba(255, 130, 0, 0.3), inset 0 0 15px rgba(255, 130, 0, 0.1);
+}
+
+.drivers-grid--hover-schumacher {
+  border: 2px solid rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3), inset 0 0 15px rgba(255, 0, 0, 0.1);
+}
+
+.drivers-grid--hover-fangio {
+  border: 2px solid rgba(192, 192, 192, 0.8);
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.3), inset 0 0 15px rgba(192, 192, 192, 0.1);
+}
+
 .driver-card {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(30, 30, 30, 1) 70%,
+    rgba(50, 40, 20, 1) 85%,
+    rgba(218, 165, 32, 1) 100%
+  );
+  width: 40%;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
-  flex: 1 1;
   border-left: 2px solid rgba(255, 255, 255, 0.9);
+  height: 200%
+}
+
+/* Lewis Hamilton - Mercedes (Black/Cyan-Lime Blue) */
+.driver-card--hamilton {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(5, 8, 22, 1) 45%,
+    rgba(20, 40, 65, 1) 70%,
+    rgba(8, 55, 80, 1) 85%,
+    rgb(2, 77, 96) 100%
+  );
+}
+
+.driver-card--hamilton:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.6);
+  border-left: 3px solid rgba(0, 212, 170, 1);
+}
+
+/* Max Verstappen - Red Bull (Dark Purplish-Blue/Red) */
+.driver-card--verstappen {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(8, 5, 18, 1) 45%,
+    rgba(40, 20, 30, 1) 70%,
+    rgba(120, 30, 30, 1) 85%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+.driver-card--verstappen:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6);
+  border-right: 3px solid rgba(255, 0, 0, 1);
+}
+
+/* Ayrton Senna - McLaren (Orange) */
+.driver-card--senna {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 15, 0, 1) 40%,
+    rgba(60, 30, 0, 1) 65%,
+    rgba(120, 60, 0, 1) 85%,
+    rgba(255, 130, 0, 1) 100%
+  );
+}
+
+.driver-card--senna:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 130, 0, 0.6);
+  border-left: 3px solid rgba(255, 130, 0, 1);
+}
+
+/* Michael Schumacher - Ferrari (Red) */
+.driver-card--schumacher {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(40, 0, 0, 1) 40%,
+    rgba(80, 0, 0, 1) 65%,
+    rgba(160, 0, 0, 1) 85%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+.driver-card--schumacher:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6);
+  border-left: 3px solid rgba(255, 0, 0, 1);
+}
+
+/* Juan Manuel Fangio - Mercedes (Silver/Teal) */
+.driver-card--fangio {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 20, 20, 1) 40%,
+    rgba(40, 50, 60, 1) 65%,
+    rgba(180, 200, 210, 1) 85%,
+    rgba(192, 192, 192, 1) 100%
+  );
+}
+
+.driver-card--fangio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(192, 192, 192, 0.6);
+  border-left: 3px solid rgba(192, 192, 192, 1);
 }
 
 .driver-card__header {
@@ -248,5 +374,4 @@ html, body {
           0 0 14px rgba(255, 255, 255, 0.55),
           0 0 30px rgba(255, 0, 0, 0.4);
           scale: 1.15;
-      }
-    }
+      }}

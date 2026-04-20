@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'url("F1imagecycle3.jpg")',
     'url("F1imagecycle4.jpg")'
   ];
+  
 
  const altTexts = [
     'A Red Bull car getting tailed by a Haas',
