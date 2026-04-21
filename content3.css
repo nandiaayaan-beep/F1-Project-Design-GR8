@@ -189,7 +189,8 @@ html, body {
   display: flex;
   flex-direction: column;
   border-left: 2px solid rgba(255, 255, 255, 0.9);
-  height: 200%
+  height: 200%;
+  position: relative;
 }
 
 /* Lewis Hamilton - Mercedes (Black/Cyan-Lime Blue) */
@@ -206,8 +207,6 @@ html, body {
 
 .driver-card--hamilton:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.6);
-  border-left: 3px solid rgba(0, 212, 170, 1);
 }
 
 /* Max Verstappen - Red Bull (Dark Purplish-Blue/Red) */
@@ -224,8 +223,6 @@ html, body {
 
 .driver-card--verstappen:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6);
-  border-right: 3px solid rgba(255, 0, 0, 1);
 }
 
 /* Ayrton Senna - McLaren (Orange) */
@@ -242,8 +239,6 @@ html, body {
 
 .driver-card--senna:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(255, 130, 0, 0.6);
-  border-left: 3px solid rgba(255, 130, 0, 1);
 }
 
 /* Michael Schumacher - Ferrari (Red) */
@@ -260,8 +255,6 @@ html, body {
 
 .driver-card--schumacher:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6);
-  border-left: 3px solid rgba(255, 0, 0, 1);
 }
 
 /* Juan Manuel Fangio - Mercedes (Silver/Teal) */
@@ -278,6 +271,92 @@ html, body {
 
 .driver-card--fangio:hover {
   transform: translateY(-8px);
+}
+
+/* ===== Driver Display (attached panel under card) ===== */
+.driver-display {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+  border-left: 2px solid rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.driver-display--visible {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.driver-display--hamilton {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(5, 8, 22, 1) 45%,
+    rgba(20, 40, 65, 1) 70%,
+    rgba(8, 55, 80, 1) 85%,
+    rgb(2, 77, 96) 100%
+  );
+  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.6);
+  border-left: 3px solid rgba(0, 212, 170, 1);
+}
+
+.driver-display--verstappen {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(8, 5, 18, 1) 45%,
+    rgba(40, 20, 30, 1) 70%,
+    rgba(120, 30, 30, 1) 85%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6);
+  border-right: 3px solid rgba(255, 0, 0, 1);
+}
+
+.driver-display--senna {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 15, 0, 1) 40%,
+    rgba(60, 30, 0, 1) 65%,
+    rgba(120, 60, 0, 1) 85%,
+    rgba(255, 130, 0, 1) 100%
+  );
+  box-shadow: 0 10px 30px rgba(255, 130, 0, 0.6);
+  border-left: 3px solid rgba(255, 130, 0, 1);
+}
+
+.driver-display--schumacher {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(40, 0, 0, 1) 40%,
+    rgba(80, 0, 0, 1) 65%,
+    rgba(160, 0, 0, 1) 85%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6);
+  border-left: 3px solid rgba(255, 0, 0, 1);
+}
+
+.driver-display--fangio {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 20, 20, 1) 40%,
+    rgba(40, 50, 60, 1) 65%,
+    rgba(180, 200, 210, 1) 85%,
+    rgba(192, 192, 192, 1) 100%
+  );
   box-shadow: 0 10px 30px rgba(192, 192, 192, 0.6);
   border-left: 3px solid rgba(192, 192, 192, 1);
 }
