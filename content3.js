@@ -41,64 +41,68 @@ document.addEventListener('DOMContentLoaded', function() {
   const allGridHoverClasses = Object.values(driverHoverClasses);
   const entries = Object.entries(driverHoverClasses);
 
-  const cards = document.querySelectorAll('.driver-card');
   for (let [cardClass] of entries) {
     const card = document.querySelector('.' + cardClass);
+    if (!card) continue;
 
     card.addEventListener('mouseenter', function() {
       if (!driverGrid) return;
 
-      // Grid border class
+      const display = card.querySelector('.driver-display');
+
       for (let gridClass of allGridHoverClasses) {
         driverGrid.classList.remove(gridClass);
       }
-      for (let [cardClass, gridClass] of entries) {
-        if (card.classList.contains(cardClass)) {
-          driverGrid.classList.add(gridClass);
 
-          // Apply card border and shadow directly via JS
-          const color = teamColors[cardClass];
-          if (color) {
-            card.style.borderLeft = '3px solid ' + color.border;
-            card.style.boxShadow = '0 10px 30px ' + color.shadow;
-          }
-          const displayColor = DisplayColours[cardClass.replace('driver-card--', 'driver-display--')];
-          if (displayColor) {
-            for (let [displayClass, gridClass] of Object.entries(DisplayColours)) {
-              if (displayClass === cardClass.replace('driver-card--', 'driver-display--')) {
-                displayClass.style.border = '3px solid ' + color.border;
-                displayClass.style.boxShadow = '0 10px 30px ' + color.shadow;
-              }
-            }
-          }
-          break;
+      for (let [currentCardClass, gridClass] of entries) {
+        if (!card.classList.contains(currentCardClass)) continue;
+
+        driverGrid.classList.add(gridClass);
+
+        const color = teamColors[currentCardClass];
+        if (color) {
+          const useRightBorder = currentCardClass === 'driver-card--verstappen';
+          card.style.borderLeft = useRightBorder ? '' : '3px solid ' + color.border;
+          card.style.borderRight = useRightBorder ? '3px solid ' + color.border : '';
+          card.style.boxShadow = '0 10px 30px ' + color.shadow;
         }
-      });
 
-      // Driver display show
-      const display = card.querySelector('.driver-display');
+        const displayKey = currentCardClass.replace('driver-card--', 'driver-display--');
+        const displayColor = DisplayColours[displayKey];
+        if (display && displayColor) {
+          const useRightBorder = displayKey === 'driver-display--verstappen';
+          display.style.borderLeft = useRightBorder ? '' : displayColor.border;
+          display.style.borderRight = useRightBorder ? displayColor.border : '';
+          display.style.boxShadow = displayColor.shadow;
+        }
+
+        break;
+      }
+
       if (display) {
         display.classList.add('driver-display--visible');
       }
-    }});
+    });
 
     card.addEventListener('mouseleave', function() {
       if (!driverGrid) return;
 
-      // Grid border class cleanup
-      for (let j = 0; j < allGridHoverClasses.length; j++) {
-        driverGrid.classList.remove(allGridHoverClasses[j]);
+      const display = card.querySelector('.driver-display');
+
+      for (let gridClass of allGridHoverClasses) {
+        driverGrid.classList.remove(gridClass);
       }
 
-      // Reset card border and shadow back to CSS defaults
       card.style.borderLeft = '';
+      card.style.borderRight = '';
       card.style.boxShadow = '';
 
-      // Driver display hide
-      const display = card.querySelector('.driver-display');
       if (display) {
+        display.style.borderLeft = '';
+        display.style.borderRight = '';
+        display.style.boxShadow = '';
         display.classList.remove('driver-display--visible');
       }
     });
   }
-};
+});
