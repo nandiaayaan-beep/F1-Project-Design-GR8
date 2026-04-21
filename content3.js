@@ -29,13 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
     'driver-card--fangio': { border: 'rgba(192, 192, 192, 1)', shadow: 'rgba(192, 192, 192, 0.6)' }
   };
 
-  const DisplayColours = {
-    'driver-display--hamilton': { border: '3px solid rgba(0, 212, 170, 1)', shadow: '0 10px 30px rgba(0, 212, 170, 0.6)' },
-    'driver-display--verstappen': { border: '3px solid rgba(255, 0, 0, 1)', shadow: '0 10px 30px rgba(255, 0, 0, 0.6)' },
-    'driver-display--senna': { border: '3px solid rgba(255, 130, 0, 1)', shadow: '0 10px 30px rgba(255, 130, 0, 0.6)' },
-    'driver-display--schumacher': { border: '3px solid rgba(255, 0, 0, 1)', shadow: '0 10px 30px rgba(255, 0, 0, 0.6)' },
-    'driver-display--fangio': { border: '3px solid rgba(192, 192, 192, 1)', shadow: '0 10px 30px rgba(192, 192, 192, 0.6)' }
-  };
+  function applyDriverDisplay(card, cardClass) {
+    const display = card.querySelector('.driver-display');
+    if (!display) return;
+    const displayClass = cardClass.replace('driver-card--', 'driver-display--');
+    display.classList.add('driver-display--visible', displayClass);
+  }
+
+  function resetDriverDisplay(card, cardClass) {
+    const display = card.querySelector('.driver-display');
+    if (!display) return;
+    const displayClass = cardClass.replace('driver-card--', 'driver-display--');
+    display.classList.remove('driver-display--visible', displayClass);
+  }
 
   // Maps each card class to its hoverOn class
   const cardHoverOnClasses = {
@@ -67,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const allGridHoverClasses = Object.values(driverHoverClasses);
   const allHoverOnClasses = Object.values(cardHoverOnClasses);
   const entries = Object.entries(driverHoverClasses);
-  for (let [cardClass] of entries) {
+  for (let [cardClass, gridClass] of entries) {
     const card = document.querySelector('.' + cardClass);
     if (!card) continue;
 
@@ -75,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!driverGrid) return;
 
       // Grid border class
-      for (let gridClass of allGridHoverClasses) {
+      for (let [gridClass] of allGridHoverClasses) {
         driverGrid.classList.remove(gridClass);
       }
 
@@ -84,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
           driverGrid.classList.add(gridClass);
 
           // Remove all hoverOn classes from all cards first
-          for (let [otherCardClass] of Object.entries(cardHoverOnClasses)) {
+          for (let [otherCardClass] of Object.keys(cardHoverOnClasses)) {
             const otherCard = document.querySelector('.' + otherCardClass);
             if (otherCard) {
               for (let hoverOnClass of allHoverOnClasses) {
@@ -95,13 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // Add the hoverOn class of the hovered driver to all cards
           const hoverOnClass = cardHoverOnClasses[cardClass];
-          for (let [otherCardClass] of Object.entries(cardHoverOnClasses)) {
+          for (let [otherCardClass] of Object.keys(cardHoverOnClasses)) {
             const otherCard = document.querySelector('.' + otherCardClass);
             if (otherCard) {
               otherCard.classList.add(hoverOnClass);
             }
           }
-
         
 
           break;
@@ -109,15 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       // Add Medal Glow
       const medal = card.querySelector('.medal');
+      const medalClass = cardClass.replace('driver-card--', 'medal--');
       if (medal) {
-        medal.classList.add(medalHoverClasses[cardClass].medalClass);
+        medal.classList.add(medalClass);
       }
 
       // Driver display show
-      const display = card.querySelector('.driver-display');
-      if (display) {
-        display.classList.add('driver-display--visible');
-      }
+      applyDriverDisplay(card, cardClass);
     });
 
     card.addEventListener('mouseleave', function() {
@@ -140,15 +143,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
       // Remove Medal Glow
       const medal = card.querySelector('.medal');
+      const medalClass = cardClass.replace('driver-card--', 'medal--');
       if (medal) {
-        medal.classList.remove(medalHoverClasses[cardClass].medalClass);
+        medal.classList.remove(medalClass);
       }
 
       // Driver display hide
-      const display = card.querySelector('.driver-display');
-      if (display) {
-        display.classList.remove('driver-display--visible');
-      }
+      resetDriverDisplay(card, cardClass);
     });
   }
 });
