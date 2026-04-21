@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const driverGrid = document.getElementById('driverGrid');
-
   const driverHoverClasses = {
     'driver-card--hamilton': 'drivers-grid--hover-hamilton',
     'driver-card--verstappen': 'drivers-grid--hover-verstappen',
@@ -38,9 +37,36 @@ document.addEventListener('DOMContentLoaded', function() {
     'driver-display--fangio': { border: '3px solid rgba(192, 192, 192, 1)', shadow: '0 10px 30px rgba(192, 192, 192, 0.6)' }
   };
 
-  const allGridHoverClasses = Object.values(driverHoverClasses);
-  const entries = Object.entries(driverHoverClasses);
+  // Maps each card class to its hoverOn class
+  const cardHoverOnClasses = {
+    'driver-card--hamilton': 'driver-card--hoverOnHamilton',
+    'driver-card--verstappen': 'driver-card--hoverOnVerstappen',
+    'driver-card--senna': 'driver-card--hoverOnSenna',
+    'driver-card--schumacher': 'driver-card--hoverOnSchumacher',
+    'driver-card--fangio': 'driver-card--hoverOnFangio'
+  };
 
+  const medalHoverClasses = {
+    'driver-card--hamilton': {
+      medalClass: 'medal--hamilton'
+    },
+    'driver-card--verstappen': {
+      medalClass: 'medal--verstappen'
+    },
+    'driver-card--senna': {
+      medalClass: 'medal--senna'
+    },
+    'driver-card--schumacher': {
+      medalClass: 'medal--schumacher'
+    },
+    'driver-card--fangio': {
+      medalClass: 'medal--fangio'
+    }
+  };
+
+  const allGridHoverClasses = Object.values(driverHoverClasses);
+  const allHoverOnClasses = Object.values(cardHoverOnClasses);
+  const entries = Object.entries(driverHoverClasses);
   for (let [cardClass] of entries) {
     const card = document.querySelector('.' + cardClass);
     if (!card) continue;
@@ -48,37 +74,47 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('mouseenter', function() {
       if (!driverGrid) return;
 
-      const display = card.querySelector('.driver-display');
-
+      // Grid border class
       for (let gridClass of allGridHoverClasses) {
         driverGrid.classList.remove(gridClass);
       }
 
-      for (let [currentCardClass, gridClass] of entries) {
-        if (!card.classList.contains(currentCardClass)) continue;
+      for (let [cardClass, gridClass] of entries) {
+        if (card.classList.contains(cardClass)) {
+          driverGrid.classList.add(gridClass);
 
-        driverGrid.classList.add(gridClass);
+          // Remove all hoverOn classes from all cards first
+          for (let [otherCardClass] of Object.entries(cardHoverOnClasses)) {
+            const otherCard = document.querySelector('.' + otherCardClass);
+            if (otherCard) {
+              for (let hoverOnClass of allHoverOnClasses) {
+                otherCard.classList.remove(hoverOnClass);
+              }
+            }
+          }
 
-        const color = teamColors[currentCardClass];
-        if (color) {
-          const useRightBorder = currentCardClass === 'driver-card--verstappen';
-          card.style.borderLeft = useRightBorder ? '' : '3px solid ' + color.border;
-          card.style.borderRight = useRightBorder ? '3px solid ' + color.border : '';
-          card.style.boxShadow = '0 10px 30px ' + color.shadow;
+          // Add the hoverOn class of the hovered driver to all cards
+          const hoverOnClass = cardHoverOnClasses[cardClass];
+          for (let [otherCardClass] of Object.entries(cardHoverOnClasses)) {
+            const otherCard = document.querySelector('.' + otherCardClass);
+            if (otherCard) {
+              otherCard.classList.add(hoverOnClass);
+            }
+          }
+
+        
+
+          break;
         }
-
-        const displayKey = currentCardClass.replace('driver-card--', 'driver-display--');
-        const displayColor = DisplayColours[displayKey];
-        if (display && displayColor) {
-          const useRightBorder = displayKey === 'driver-display--verstappen';
-          display.style.borderLeft = useRightBorder ? '' : displayColor.border;
-          display.style.borderRight = useRightBorder ? displayColor.border : '';
-          display.style.boxShadow = displayColor.shadow;
-        }
-
-        break;
+      }
+      // Add Medal Glow
+      const medal = card.querySelector('.medal');
+      if (medal) {
+        medal.classList.add(medalHoverClasses[cardClass].medalClass);
       }
 
+      // Driver display show
+      const display = card.querySelector('.driver-display');
       if (display) {
         display.classList.add('driver-display--visible');
       }
@@ -87,20 +123,30 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('mouseleave', function() {
       if (!driverGrid) return;
 
-      const display = card.querySelector('.driver-display');
-
-      for (let gridClass of allGridHoverClasses) {
-        driverGrid.classList.remove(gridClass);
+      // Grid border class cleanup
+      for (let j = 0; j < allGridHoverClasses.length; j++) {
+        driverGrid.classList.remove(allGridHoverClasses[j]);
       }
 
-      card.style.borderLeft = '';
-      card.style.borderRight = '';
-      card.style.boxShadow = '';
+      // Remove all hoverOn classes from all cards
+      for (let [otherCardClass] of Object.entries(cardHoverOnClasses)) {
+        const otherCard = document.querySelector('.' + otherCardClass);
+        if (otherCard) {
+          for (let hoverOnClass of allHoverOnClasses) {
+            otherCard.classList.remove(hoverOnClass);
+          }
+        }
+      }
+    
+      // Remove Medal Glow
+      const medal = card.querySelector('.medal');
+      if (medal) {
+        medal.classList.remove(medalHoverClasses[cardClass].medalClass);
+      }
 
+      // Driver display hide
+      const display = card.querySelector('.driver-display');
       if (display) {
-        display.style.borderLeft = '';
-        display.style.borderRight = '';
-        display.style.boxShadow = '';
         display.classList.remove('driver-display--visible');
       }
     });
