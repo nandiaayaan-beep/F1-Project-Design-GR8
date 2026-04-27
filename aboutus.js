@@ -22,8 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
         alert("Please fill in all fields");
         return;
       }
-      if(emailVal.indexOf("@") === -1) {
+      // Check for @ symbol
+      if(emailVal.indexOf("@" || ".") === -1) {
         alert("Please enter a valid email address");
+        return;
+      }
+      // Prevent domain stacking - only one domain extension allowed
+      const domainPart = emailVal.split('@')[1];
+      if (domainPart && domainPart.split('.').length > 2) {
+        alert("Please enter a valid email with only one domain extension");
         return;
       }
 
