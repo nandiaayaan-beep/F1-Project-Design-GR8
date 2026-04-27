@@ -60,6 +60,25 @@
   display: inline-block;
   transition: transform 0.35s ease-out, color 0.35s ease-out, text-shadow 0.35s ease-out;
   transform-origin: center;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(205, 2, 2, 0.9);
+  box-shadow:
+    0 0 4px rgba(205, 2, 2, 0.8),
+    0 0 10px rgba(205, 2, 2, 0.5);
+  transition: width 0.35s ease-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link:hover {
@@ -68,7 +87,7 @@
     0 0 4px rgba(255, 59, 36, 0.95),
     0 0 8px rgba(255, 59, 36, 0.95),
     0 0 16px rgba(255, 59, 36, 0.95);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .nav-bar {

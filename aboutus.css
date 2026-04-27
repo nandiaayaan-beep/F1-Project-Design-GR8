@@ -1,3 +1,6 @@
+/* =====================
+   NAVBAR
+   ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -9,17 +12,17 @@
   align-items: center;
   padding: 10px 20px;
   box-sizing: border-box;
-  background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   z-index: 100;
   transform: translateY(-20px);
   animation: fadeIn 0.8s ease forwards, fadeDown 0.8s ease forwards;
-  background: linear-gradient(135deg, rgba(38, 38, 38, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
-  linear-gradient(225deg, rgba(27, 26, 26, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
-  linear-gradient(315deg, rgba(54, 52, 52, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
-  linear-gradient(45deg, rgba(34, 34, 34, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
-  #111;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background:
+    linear-gradient(135deg, rgba(38, 38, 38, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
+    linear-gradient(225deg, rgba(27, 26, 26, 0.4) 25%, transparent 25%) -10px 0 / 20px 20px,
+    linear-gradient(315deg, rgba(54, 52, 52, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
+    linear-gradient(45deg, rgba(34, 34, 34, 0.4) 25%, transparent 25%) 0 0 / 20px 20px,
+    #111;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled {
@@ -32,16 +35,6 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-  height: 10%;
-  width: 15%;
-}
-
-.alignitems1 {
-  display: flex;
-  padding: 10px
-}
-
 .navbar > header {
   display: flex;
   align-items: center;
@@ -51,24 +44,15 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   font-family: 'Orbitron', sans-serif;
 }
 
-.nav-link {
-  color: white;
-  font-style: bold;
-  text-decoration: none;
-  font-size: 17px;
-  font-family: 'Orbitron', sans-serif;
-  display: inline-block;
-  transition: transform 0.35s ease-out, color 0.35s ease-out, text-shadow 0.35s ease-out;
-  transform-origin: center;
-}
-
-.nav-link:hover {
-  color: rgba(255, 59, 36, 0.95);
+.main-header {
+  color: rgba(205, 2, 2, 0.8);
+  font-size: 25px;
+  font-style: italic;
+  text-align: left;
   text-shadow:
-    0 0 4px rgba(255, 59, 36, 0.95),
-    0 0 8px rgba(255, 59, 36, 0.95),
-    0 0 16px rgba(255, 59, 36, 0.95);
-  transform: scale(1.2);
+    0 0 8px rgba(205, 2, 2, 0.8),
+    0 0 16px rgba(205, 2, 2, 0.7),
+    0 0 24px rgba(205, 2, 2, 0.5);
 }
 
 .nav-bar {
@@ -76,7 +60,6 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
-  background-size: cover;
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -85,29 +68,86 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   font-family: 'Orbitron', sans-serif;
 }
 
-.main-header {
-  color: red;
-  font-size: 25px;
-  font-style: italic, bold;
-  text-align: left;
-  align-items: horizontal;
-      color: rgba(205, 2, 2, 0.8);
-   text-shadow:
-    0 0 8px rgba(205, 2, 2, 0.8),
-    0 0 16px rgba(205, 2, 2, 0.7),
-    0 0 24px rgba(205, 2, 2, 0.5);
-}
-.logo {
-  width: 50px;
-  height: 50px;
-  text-align: left;
-}
-
 .nav-bar a {
   color: white;
   text-decoration: none;
 }
 
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Orbitron', sans-serif;
+  display: inline-block;
+  transition: color 0.5s ease-out, text-shadow 0.5s ease-out, transform 0.5s ease-out;
+  transform-origin: center;
+
+  /*
+   * ============================================================
+   * NAVBAR UNDERLINE HOVER ANIMATION — COPY THIS TO OTHER FILES
+   * ============================================================
+   * position: relative is REQUIRED so the ::after pseudo-element
+   * can use absolute positioning relative to this link element.
+   * We removed transform: scale() here so it doesn't fight the
+   * underline width transition (both would compete visually).
+   */
+  position: relative;
+}
+
+/*
+ * ============================================================
+ * NAVBAR UNDERLINE ::after — COPY THIS TO OTHER FILES
+ * ============================================================
+ * This creates the animated underline on hover.
+ *
+ * How it works:
+ *   - ::after is a fake empty box sitting below each nav link
+ *   - At rest: width is 0 (completely invisible)
+ *   - On hover: width transitions to 100% (full width of the text)
+ *   - The transition on width creates the left-to-right draw effect
+ *   - transform-origin: left ensures it grows FROM the left side
+ *
+ * The key properties:
+ *   content: ''        → required, makes the pseudo-element exist
+ *   position: absolute → sits relative to the .nav-link above
+ *   bottom: 0          → hugs the bottom of the text
+ *   left: 0            → anchored to the left edge
+ *   width: 0           → invisible at rest
+ *   height: 2px        → thickness of the underline
+ *   background-color   → the red colour of the line
+ *   transition: width  → this is what animates it left → right
+ */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(205, 2, 2, 0.9);
+  box-shadow:
+    0 0 4px rgba(205, 2, 2, 0.8),
+    0 0 10px rgba(205, 2, 2, 0.5);
+  transition: width 0.35s ease-out;  /* the animation: grows from 0 to full width */
+}
+
+/* On hover: grow the underline to full width of the link text */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: rgba(255, 59, 36, 0.95);
+  text-shadow:
+    0 0 4px rgba(255, 59, 36, 0.95),
+    0 0 8px rgba(255, 59, 36, 0.95),
+    0 0 16px rgba(255, 59, 36, 0.95);
+  transform: scale(1.1);
+}
+
+/* =====================
+   GLOBAL RESET
+   ===================== */
 * {
   box-sizing: border-box;
 }
@@ -123,27 +163,295 @@ html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   max-width: 100%;
-  flex-shrink: 1;
 }
 
+/* =====================
+   ABOUT US: 75-25 LAYOUT
+   ===================== */
+
+/* Outer wrapper — pushes content below the fixed navbar */
+.aboutus-main {
+  padding-top: 130px;
+  max-width: 100%;
+}
+
+/* The two-column row */
+.aboutus-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 100%;
+  position: relative;
+  gap: 0;
+}
+
+/* LEFT PANEL load-in */
+.contacts-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-right: 2px solid white;
+  padding-right: 20px;
+  min-width: 0;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* RIGHT PANEL load-in (slightly later for stagger effect) */
+.feedback-panel {
+  max-width: 25%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: flex-start;
+  padding-left: 20px;
+  min-width: 0;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.55s;
+}
+
+/* Each contact row fades up one by one */
+.alignhorizontal:nth-child(1) { opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 0.7s; }
+.alignhorizontal:nth-child(2) { opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 0.85s; }
+.alignhorizontal:nth-child(3) { opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 1.0s; }
+
+/* =====================
+   TYPOGRAPHY
+   ===================== */
+.section-title {
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  margin: 0;
+  text-shadow:
+    0 0 4px rgba(205, 2, 2, 0.8),
+    0 0 8px rgba(205, 2, 2, 0.8),
+    0 0 16px rgba(205, 2, 2, 0.8);
+  box-shadow: 0 8px 8px -8px rgba(205, 2, 2, 1);
+}
+
+.subheader {
+  border-bottom: 1px solid gray;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+}
+
+.feedback-header {
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  width: 100%;
+  margin: 0 0 12px 0;
+  text-shadow:
+    0 0 4px rgba(205, 2, 2, 0.8),
+    0 0 8px rgba(205, 2, 2, 0.8),
+    0 0 16px rgba(205, 2, 2, 0.8);
+  box-shadow: 0 8px 8px -8px rgba(205, 2, 2, 1);
+}
+
+/* =====================
+   CONTACT ICONS & HOVER
+   ===================== */
+
+.alignhorizontal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: gap 0.3s ease;
+}
+
+.alignhorizontal p {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(205, 2, 2, 0.85);
+
+  /* 
+   * HOW THE UNDERLINE ANIMATION WORKS:
+   * We don't use a real text-decoration underline here.
+   * Instead we use a CSS trick with a pseudo-element (::after).
+   * The ::after element is an invisible box sitting below the text.
+   * It starts with width: 0 (invisible) and animates to width: 100%.
+   * This creates the "draws in from left to right" effect.
+   * The animation runs once on page load (forwards = stays at final state).
+   */
+  position: relative;  /* needed so ::after can position itself relative to the text */
+  display: inline-block;
+  transition: font-size 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3 ease;
+}
+
+/* 
+ * THE UNDERLINE PSEUDO-ELEMENT:
+ * ::after creates a fake element after the text content.
+ * We give it a height (thickness), a colour, and start it at width: 0.
+ * The animation "underlineReveal" grows it from 0 → 100% width.
+ */
+.alignhorizontal p::after {
+  content: '';               /* required for pseudo-elements to appear */
+  position: absolute;        /* positioned relative to the <p> above */
+  bottom: -2px;              /* sit just below the text */
+  left: 0;                   /* start from the left edge */
+  width: 0;                  /* starts invisible (zero width) */
+  height: 1.5px;             /* thickness of the underline */
+  background-color: rgba(205, 2, 2, 0.75);
+  animation: underlineReveal 1.2s ease forwards; /* run once, stay at end */
+  animation-delay: 0.6s;    /* slight delay so page loads first */
+}
+
+.alignhorizontal:hover p {
+  font-size: 17px;
+  text-shadow:
+    0 0 6px rgba(205, 2, 2, 0.9),
+    0 0 14px rgba(205, 2, 2, 0.7),
+    0 0 24px rgba(205, 2, 2, 0.5);
+}
+
+/* Shared base icon style */
+.email-logo,
+.phone-logo,
+.youtube-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: #111;
+  border: 1.5px solid rgba(205, 2, 2, 0.5);
+  box-shadow:
+    0 0 5px rgba(205, 2, 2, 0.3),
+    inset 0 0 4px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease,
+              box-shadow 0.3s ease, border-color 0.3s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.alignhorizontal:hover .email-logo,
+.alignhorizontal:hover .phone-logo,
+.alignhorizontal:hover .youtube-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  border-color: rgba(205, 2, 2, 0.95);
+  box-shadow:
+    0 0 10px rgba(205, 2, 2, 0.7),
+    0 0 22px rgba(205, 2, 2, 0.5),
+    0 0 38px rgba(205, 2, 2, 0.3),
+    inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background-size: 65%;
+}
+
+/* Phone icon — green handset */
+.phone-logo {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2334c759' d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z'/%3E%3C/svg%3E");
+}
+
+/* Gmail M-envelope icon — thick coloured top bar + M-chevron */
+.email-logo {
+  background-size: 80%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2' y='4' width='20' height='16' rx='2' ry='2' fill='%23f1f1f1'/%3E%3Crect x='2' y='4' width='20' height='4' rx='1' fill='%23EA4335'/%3E%3Cpath fill='%234285F4' d='M2 8h20v12H2z'/%3E%3Cpath fill='%23fff' d='M2 8l10 7 10-7'/%3E%3Cpath fill='none' stroke='%23EA4335' stroke-width='2.2' stroke-linecap='round' d='M2 8l10 7 10-7'/%3E%3C/svg%3E");
+}
+
+.alignhorizontal:hover .email-logo {
+  background-size: 86%;
+}
+
+/* YouTube red play-button icon */
+.youtube-logo {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M21.8 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.2 4 12 4 12 4s-4.2 0-7 .3c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 8.7 2 10.3v1.4c0 1.5.2 3.1.2 3.1s.2 1.4.8 2c.8.8 1.8.8 2.2.9C6.8 17.9 12 18 12 18s4.2 0 7-.3c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.5.2-3.1v-1.4c0-1.6-.2-3.1-.2-3.1z'/%3E%3Cpolygon fill='%23fff' points='10,8.5 10,15.5 16,12'/%3E%3C/svg%3E");
+}
+
+/* =====================
+   BEST PLAN SECTION
+   ===================== */
+.bestplan {
+  padding: 40px 10%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =====================
+   RESPONSIVE
+   On screens 900px or narrower, the side-by-side layout
+   would be too cramped, so we stack the panels vertically.
+   ===================== */
+@media (max-width: 900px) {
+  .aboutus-layout {
+    flex-direction: column;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  /* Remove the right border and add a bottom border instead,
+     since the panels are now stacked vertically */
+  .contacts-panel {
+    border-right: none;
+    border-bottom: 2px solid white;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  /* Let the feedback panel go full width on mobile */
+  .feedback-panel {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+
+/* =====================
+   ANIMATIONS
+   ===================== */
+
+/* Navbar fade + drop (already applied to .navbar above) */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-@keyframes fadeUp {
-    from { transform: translateY(20px); }
-    to { transform: translateY(0); }
+@keyframes grow {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
 
 @keyframes fadeDown {
-    from { transform: translateY(-20px); }
-    to { transform: translateY(0); }
+  from { transform: translateY(-20px); }
+  to   { transform: translateY(0); }
 }
 
-@keyframes scaleup {
-    from {scale: 1;}
-    to { scale: 1.3; }
+/* Used by panels and contact rows — fades in while rising up slightly */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+ * UNDERLINE REVEAL ANIMATION (used by .alignhorizontal p::after)
+ * -------------------------------------------------------------------
+ * Grows the pseudo-element from width 0 → 100%.
+ * Combined with left: 0 on the element, this makes it draw
+ * from left to right. "forwards" means it stays at 100% after finishing.
+ */
+@keyframes underlineReveal {
+  from { width: 0; }
+  to   { width: 100%; }
 }
 
 @keyframes glowPulse {
@@ -158,18 +466,3 @@ html, body {
       0 0 30px rgba(255, 0, 0, 0.4);
   }
 }
-
-@keyframes timeline {
-    from {
-        box-shadow:
-          0 0 8px rgba(255, 255, 255, 0.35),
-          0 0 18px rgba(255, 0, 0, 0.25);
-          scale: 1;
-      }
-      to {
-        box-shadow:
-          0 0 14px rgba(255, 255, 255, 0.55),
-          0 0 30px rgba(255, 0, 0, 0.4);
-          scale: 1.15;
-      }
-    }
