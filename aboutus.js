@@ -29,10 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const formData = new FormData(this);
 
-      const response = await fetch("aboutus.php", {
-        method: "POST",
-        body: formData
-      });
+const response = await fetch("https://tdoiwxffaoxexompcqmp.supabase.co/rest/v1/feedback", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "apikey": "sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg",
+    "Authorization": "Bearer sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg",
+    "Prefer": "return=minimal"
+  },
+  body: JSON.stringify({
+    name: nameVal,
+    email: emailVal,
+    feedback: msgVal
+  })
+});
 
       if (response.ok) {
         this.classList.add('hidden');
