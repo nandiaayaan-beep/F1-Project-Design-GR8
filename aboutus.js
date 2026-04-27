@@ -22,12 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
         alert("Please fill in all fields");
         return;
       }
-      // Check for @ symbol
-      if(emailVal.indexOf("@" || ".") === -1) {
+      // Validate email format using regex (allows all valid TLDs including country codes)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailVal)) {
         alert("Please enter a valid email address");
         return;
       }
-      // Prevent domain stacking - only one domain extension allowed
+      // Prevent domain stacking (multiple TLDs like .com.net)
       const domainPart = emailVal.split('@')[1];
       if (domainPart && domainPart.split('.').length > 2) {
         alert("Please enter a valid email with only one domain extension");
