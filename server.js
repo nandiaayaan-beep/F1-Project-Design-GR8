@@ -33,7 +33,6 @@ app.post("/submit-feedback", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-app.use(cors());
 
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
