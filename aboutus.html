@@ -28,7 +28,7 @@
         </div>
 
         <main class="aboutus-main">
-            <section class="aboutus-layout">
+            <section class="aboutus-layout aboutus-layout--border">
 
                 <!-- LEFT: Contacts (75%) -->
                 <div class="contacts-panel">
@@ -48,13 +48,13 @@
                         <p>Contact us on:</p>
                         <br>
                         <span class="alignhorizontal">
-                            <div class="email-logo"></div><p>Email: nandiaayaan@example.com</p>
+                            <div class="email-logo"></div><a href="mailto:nandiaayaan@gmail.com">Email: nandiaayaan@gmail.com</a>
                         </span>
                         <span class="alignhorizontal">
-                            <div class="phone-logo"></div><p>Phone: 123-456-7890</p>
+                            <div class="phone-logo"></div><a href="tel:123-456-7890">Phone: 123-456-7890</a>
                         </span>
                         <span class="alignhorizontal">
-                            <div class="youtube-logo"></div><p>YouTube: nandiaayaan</p>
+                            <div class="youtube-logo"></div><a href="https://youtube.com/nandiaayaan">YouTube: nandiaayaan</a>
                         </span>
                     </div>
                 </div>
@@ -62,15 +62,43 @@
                 <!-- RIGHT: Feedback (25%) -->
                 <div class="feedback-panel">
                     <h1 class="section-title">Feedback</h1>
-                    <div class="feedback--section_1">
-                        <p>Test content for feedback section. Add a form or feedback details here.</p>
-                    </div>
+                    <form class="feedback-form" id="feedbackForm" method="post">
+                        <div class="form-group">
+                            <label class="form-label" for="fb-name">Name</label>
+                            <input type="text" id="fb-name" name="name" class="form-input" placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="fb-email">Email</label>
+                            <input type="email" id="fb-email" name="email" class="form-input form-input--wide" placeholder="Your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="fb-message">Feedback</label>
+                            <textarea id="fb-message" name="feedback" class="form-input form-input--message" placeholder="Leave your feedback here..." rows="6"></textarea>
+                        </div>
+
+                        <button type="submit" class="feedback-submit">
+                            <strong>Send</strong> &#8594;
+                        </button>
+
+                    </form>
+                    <div id="feedbackSuccess" class="feedback-success">Feedback Received!</div>
                 </div>
 
             </section>
 
             <section class="bestplan">
-                <header>Best Plan</header>
+                <header>
+                    <h1 class="section-title">Best Plan</h1>
+                </header>
+                <p>Best plans for you:</p>
+                <br>
+                <ul class="plan-list">
+                    <li><strong>Budget:</strong> Placeholder text for the budget plan details and features.</li>
+                    <li><strong>Best Value:</strong> Placeholder text for the best value plan details and features.</li>
+                    <li><strong>Premium:</strong> Placeholder text for the premium plan details and features.</li>
+                </ul>
             </section>
         </main>
     </body>
