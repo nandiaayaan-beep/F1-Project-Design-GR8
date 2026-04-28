@@ -426,166 +426,308 @@ html, body {
     border: 1px solid rgba(0, 0, 0, 1);
 }
 
-/* BACKGROUND IMAGE SET HERE: url('1950firstgp.jpg') */
-/* Mercedes - boxes 1-2 */
-.timelinepair1, .timelinepair2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+/* Mercedes - box 1: Kimi Antonelli */
+.timelinepair1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('KimiAntonelli.avif');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
 }
 
-.timelinepair1:hover, .timelinepair1:focus-within,
+.timelinepair1:hover, .timelinepair1:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Mercedes - box 2: George Russell */
+.timelinepair2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('GeorgeRussel.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
+}
+
 .timelinepair2:hover, .timelinepair2:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
     filter: brightness(1.08);
 }
 
-/* Ferrari - boxes 3-4 */
-.timelinepair3, .timelinepair4 {
-    background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('1950firstgp.jpg');
+/* Ferrari - box 3: Charles Leclerc */
+.timelinepair3 {
+    background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('CharlesLeclerc.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
 }
 
-.timelinepair3:hover, .timelinepair3:focus-within,
+.timelinepair3:hover, .timelinepair3:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(220, 0, 0, 0.95), 0 0 8px rgba(220, 0, 0, 0.95), 0 0 16px rgba(220, 0, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Ferrari - box 4: Lewis Hamilton */
+.timelinepair4 {
+    background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('LewisHamilton.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
+}
+
 .timelinepair4:hover, .timelinepair4:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(220, 0, 0, 0.95), 0 0 8px rgba(220, 0, 0, 0.95), 0 0 16px rgba(220, 0, 0, 0.95);
     filter: brightness(1.08);
 }
 
-/* McLaren - boxes 5-6 */
-.timelinepair5, .timelinepair6 {
-    background: linear-gradient(rgba(255, 135, 0, 0.2), rgba(255, 135, 0, 0.2)), url('1950firstgp.jpg');
+/* McLaren - box 5: Lando Norris */
+.timelinepair5 {
+    background: linear-gradient(rgba(255, 135, 0, 0.2), rgba(255, 135, 0, 0.2)), url('LandoNorris.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(255, 135, 0, 0.6);
 }
 
-.timelinepair5:hover, .timelinepair5:focus-within,
+.timelinepair5:hover, .timelinepair5:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 135, 0, 0.95), 0 0 8px rgba(255, 135, 0, 0.95), 0 0 16px rgba(255, 135, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* McLaren - box 6: Oscar Piastri */
+.timelinepair6 {
+    background: linear-gradient(rgba(255, 135, 0, 0.2), rgba(255, 135, 0, 0.2)), url('OscarPiastri.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 135, 0, 0.6);
+}
+
 .timelinepair6:hover, .timelinepair6:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(255, 135, 0, 0.95), 0 0 8px rgba(255, 135, 0, 0.95), 0 0 16px rgba(255, 135, 0, 0.95);
     filter: brightness(1.08);
 }
 
-/* Haas - boxes 7-8 */
-.timelinepair7, .timelinepair8 {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('1950firstgp.jpg');
+/* Haas - box 7: Esteban Ocon */
+.timelinepair7 {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('EstebanOcon.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
 }
 
-.timelinepair7:hover, .timelinepair7:focus-within,
+.timelinepair7:hover, .timelinepair7:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Haas - box 8: Oliver Bearman */
+.timelinepair8 {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('OliverBearman.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
+}
+
 .timelinepair8:hover, .timelinepair8:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.95);
     filter: brightness(1.08);
 }
 
-/* Alpine - boxes 9-10 */
-.timelinepair9, .timelinepair10 {
-    background: linear-gradient(rgba(0, 100, 150, 0.2), rgba(0, 100, 150, 0.2)), url('1950firstgp.jpg');
+/* Alpine - box 9: Pierre Gasly */
+.timelinepair9 {
+    background: linear-gradient(rgba(0, 100, 150, 0.2), rgba(0, 100, 150, 0.2)), url('PierreGasly.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(0, 100, 150, 0.6);
 }
 
-.timelinepair9:hover, .timelinepair9:focus-within,
+.timelinepair9:hover, .timelinepair9:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 100, 150, 0.95), 0 0 8px rgba(0, 100, 150, 0.95), 0 0 16px rgba(0, 100, 150, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Alpine - box 10: Franco Collapinto */
+.timelinepair10 {
+    background: linear-gradient(rgba(0, 100, 150, 0.2), rgba(0, 100, 150, 0.2)), url('FrancoCollapinto.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 100, 150, 0.6);
+}
+
 .timelinepair10:hover, .timelinepair10:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(0, 100, 150, 0.95), 0 0 8px rgba(0, 100, 150, 0.95), 0 0 16px rgba(0, 100, 150, 0.95);
     filter: brightness(1.08);
 }
 
-/* Red Bull Racing - boxes 11-12 */
-.timelinepair11, .timelinepair12 {
-    background: linear-gradient(rgba(1, 33, 124, 0.25), rgba(1, 33, 124, 0.25)), url('1950firstgp.jpg');
+/* Red Bull Racing - box 11: Max Verstappen */
+.timelinepair11 {
+    background: linear-gradient(rgba(1, 33, 124, 0.25), rgba(1, 33, 124, 0.25)), url('MaxVerstrappen.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(1, 33, 124, 0.6);
 }
 
-.timelinepair11:hover, .timelinepair11:focus-within,
+.timelinepair11:hover, .timelinepair11:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(1, 33, 124, 0.95), 0 0 8px rgba(1, 33, 124, 0.95), 0 0 16px rgba(1, 33, 124, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Red Bull Racing - box 12: Isack Hadjar */
+.timelinepair12 {
+    background: linear-gradient(rgba(1, 33, 124, 0.25), rgba(1, 33, 124, 0.25)), url('IssackHadjar.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(1, 33, 124, 0.6);
+}
+
 .timelinepair12:hover, .timelinepair12:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(1, 33, 124, 0.95), 0 0 8px rgba(1, 33, 124, 0.95), 0 0 16px rgba(1, 33, 124, 0.95);
     filter: brightness(1.08);
 }
 
-/* Racing Bulls - boxes 13-14 */
-.timelinepair13, .timelinepair14 {
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('1950firstgp.jpg');
+/* Racing Bulls - box 13: Liam Lawson */
+.timelinepair13 {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('LiamLawson.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
 }
 
-.timelinepair13:hover, .timelinepair13:focus-within,
+.timelinepair13:hover, .timelinepair13:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(51, 51, 51, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Racing Bulls - box 14: Arvid Lindblad */
+.timelinepair14 {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('ArvidLindlblad.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
+}
+
 .timelinepair14:hover, .timelinepair14:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(51, 51, 51, 0.95);
     filter: brightness(1.08);
 }
 
-/* Audi - boxes 15-16 */
-.timelinepair15, .timelinepair16 {
-    background: linear-gradient(rgba(206, 18, 18, 0.2), rgba(206, 18, 18, 0.2)), url('1950firstgp.jpg');
+/* Audi - box 15: Nico Hulkenberg */
+.timelinepair15 {
+    background: linear-gradient(rgba(206, 18, 18, 0.2), rgba(206, 18, 18, 0.2)), url('NicoHulkenberg.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(206, 18, 18, 0.6);
 }
 
-.timelinepair15:hover, .timelinepair15:focus-within,
+.timelinepair15:hover, .timelinepair15:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(206, 18, 18, 0.95), 0 0 8px rgba(206, 18, 18, 0.95), 0 0 16px rgba(206, 18, 18, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Audi - box 16: Gabriel Bortoleto */
+.timelinepair16 {
+    background: linear-gradient(rgba(206, 18, 18, 0.2), rgba(206, 18, 18, 0.2)), url('GabrielBortoleto.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(206, 18, 18, 0.6);
+}
+
 .timelinepair16:hover, .timelinepair16:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(206, 18, 18, 0.95), 0 0 8px rgba(206, 18, 18, 0.95), 0 0 16px rgba(206, 18, 18, 0.95);
     filter: brightness(1.08);
 }
 
-/* Williams - boxes 17-18 */
-.timelinepair17, .timelinepair18 {
-    background: linear-gradient(rgba(0, 120, 191, 0.2), rgba(0, 120, 191, 0.2)), url('1950firstgp.jpg');
+/* Williams - box 17: Alex Albon */
+.timelinepair17 {
+    background: linear-gradient(rgba(0, 120, 191, 0.2), rgba(0, 120, 191, 0.2)), url('AlexAlbon.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(0, 120, 191, 0.6);
 }
 
-.timelinepair17:hover, .timelinepair17:focus-within,
+.timelinepair17:hover, .timelinepair17:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 120, 191, 0.95), 0 0 8px rgba(0, 120, 191, 0.95), 0 0 16px rgba(0, 120, 191, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Williams - box 18: Carlos Sainz */
+.timelinepair18 {
+    background: linear-gradient(rgba(0, 120, 191, 0.2), rgba(0, 120, 191, 0.2)), url('CarlosSainz.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 120, 191, 0.6);
+}
+
 .timelinepair18:hover, .timelinepair18:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(0, 120, 191, 0.95), 0 0 8px rgba(0, 120, 191, 0.95), 0 0 16px rgba(0, 120, 191, 0.95);
     filter: brightness(1.08);
 }
 
-/* Cadillac - boxes 19-20 */
-.timelinepair19, .timelinepair20 {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+/* Cadillac - box 19: Sergio Perez */
+.timelinepair19 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Sergio Perez.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
 }
 
-.timelinepair19:hover, .timelinepair19:focus-within,
+.timelinepair19:hover, .timelinepair19:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Cadillac - box 20: Valtteri Bottas */
+.timelinepair20 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Valtteri Botas.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
+}
+
 .timelinepair20:hover, .timelinepair20:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
     filter: brightness(1.08);
 }
 
-/* Aston Martin - boxes 21-22 */
-.timelinepair21, .timelinepair22 {
-    background: linear-gradient(rgba(0, 150, 0, 0.2), rgba(0, 150, 0, 0.2)), url('1950firstgp.jpg');
+/* Aston Martin - box 21: Fernando Alonso */
+.timelinepair21 {
+    background: linear-gradient(rgba(0, 150, 0, 0.2), rgba(0, 150, 0, 0.2)), url('Fernando Alonso.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(0, 150, 0, 0.6);
 }
 
-.timelinepair21:hover, .timelinepair21:focus-within,
+.timelinepair21:hover, .timelinepair21:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 150, 0, 0.95), 0 0 8px rgba(0, 150, 0, 0.95), 0 0 16px rgba(0, 150, 0, 0.95);
+    filter: brightness(1.08);
+}
+
+/* Aston Martin - box 22: Lance Stroll */
+.timelinepair22 {
+    background: linear-gradient(rgba(0, 150, 0, 0.2), rgba(0, 150, 0, 0.2)), url('LanceStroll.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 150, 0, 0.6);
+}
+
 .timelinepair22:hover, .timelinepair22:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(0, 150, 0, 0.95), 0 0 8px rgba(0, 150, 0, 0.95), 0 0 16px rgba(0, 150, 0, 0.95);
@@ -818,7 +960,78 @@ html, body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  object-fit: cover;
+  border: 2px solid white;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Mercedes team-image */
+.timelinepair1team .team-image {
+  background-color: rgba(192, 192, 192, 0.6);
+  box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+}
+
+/* Ferrari team-image */
+.timelinepair3team .team-image {
+  background-color: rgba(220, 0, 0, 0.6);
+  box-shadow: 0 0 4px rgba(220, 0, 0, 0.95), 0 0 8px rgba(220, 0, 0, 0.95), 0 0 16px rgba(220, 0, 0, 0.95);
+}
+
+/* McLaren team-image */
+.timelinepair5team .team-image {
+  background-color: rgba(255, 135, 0, 0.6);
+  box-shadow: 0 0 4px rgba(255, 135, 0, 0.95), 0 0 8px rgba(255, 135, 0, 0.95), 0 0 16px rgba(255, 135, 0, 0.95);
+}
+
+/* Haas team-image */
+.timelinepair7team .team-image {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.95);
+}
+
+/* Alpine team-image */
+.timelinepair9team .team-image {
+  background-color: rgba(0, 100, 150, 0.6);
+  box-shadow: 0 0 4px rgba(0, 100, 150, 0.95), 0 0 8px rgba(0, 100, 150, 0.95), 0 0 16px rgba(0, 100, 150, 0.95);
+}
+
+/* Red Bull Racing team-image */
+.timelinepair11team .team-image {
+  background-color: rgba(1, 33, 124, 0.6);
+  box-shadow: 0 0 4px rgba(1, 33, 124, 0.95), 0 0 8px rgba(1, 33, 124, 0.95), 0 0 16px rgba(1, 33, 124, 0.95);
+}
+
+/* Racing Bulls team-image */
+.timelinepair13team .team-image {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(51, 51, 51, 0.95);
+}
+
+/* Audi team-image */
+.timelinepair15team .team-image {
+  background-color: rgba(206, 18, 18, 0.6);
+  box-shadow: 0 0 4px rgba(206, 18, 18, 0.95), 0 0 8px rgba(206, 18, 18, 0.95), 0 0 16px rgba(206, 18, 18, 0.95);
+}
+
+/* Williams team-image */
+.timelinepair17team .team-image {
+  background-color: rgba(0, 120, 191, 0.6);
+  box-shadow: 0 0 4px rgba(0, 120, 191, 0.95), 0 0 8px rgba(0, 120, 191, 0.95), 0 0 16px rgba(0, 120, 191, 0.95);
+}
+
+/* Cadillac team-image */
+.timelinepair19team .team-image {
+  background-color: rgba(192, 192, 192, 0.6);
+  box-shadow: 0 0 4px rgba(192, 192, 192, 0.95), 0 0 8px rgba(192, 192, 192, 0.95), 0 0 16px rgba(192, 192, 192, 0.95);
+}
+
+/* Aston Martin team-image */
+.timelinepair21team .team-image {
+  background-color: rgba(0, 150, 0, 0.6);
+  box-shadow: 0 0 4px rgba(0, 150, 0, 0.95), 0 0 8px rgba(0, 150, 0, 0.95), 0 0 16px rgba(0, 150, 0, 0.95);
 }
 
 .team-paragraph {
