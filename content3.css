@@ -326,7 +326,8 @@ html, body {
     rgba(218, 165, 32, 1) 100%
   );
   flex: 1;
-  padding: 16px;
+  padding: 0;
+  height: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -336,14 +337,18 @@ html, body {
 }
 
 .team-card--ferrari {
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(40, 0, 0, 1) 40%,
-    rgba(80, 0, 0, 1) 65%,
-    rgba(160, 0, 0, 1) 85%,
-    rgba(255, 0, 0, 1) 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(40, 0, 0, 0.82) 40%,
+      rgba(80, 0, 0, 0.72) 65%,
+      rgba(160, 0, 0, 0.62) 85%,
+      rgba(255, 0, 0, 0.48) 100%
+    ),
+    url('FerrariTeam.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .team-card--ferrari:hover {
@@ -351,18 +356,82 @@ html, body {
 }
 
 .team-card--mclaren {
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(30, 20, 0, 1) 40%,
-    rgba(60, 40, 0, 1) 65%,
-    rgba(120, 80, 0, 1) 85%,
-    rgba(255, 130, 0, 1) 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(30, 20, 0, 0.82) 40%,
+      rgba(60, 40, 0, 0.72) 65%,
+      rgba(120, 80, 0, 0.62) 85%,
+      rgba(255, 130, 0, 0.48) 100%
+    ),
+    url('MclarenCar.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .team-card--mclaren:hover {
   transform: translateY(-8px);
+}
+
+/* ===== Team Card Content Row ===== */
+.team-card__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.team-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.team-stat-line {
+  color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.team-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-position {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.team-card__image {
+  flex-shrink: 0;
+  width: 160px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.team-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ===== Driver Display (attached panel under card) ===== */
@@ -563,7 +632,7 @@ html, body {
   position: absolute;
   top: 100%;
   left: -1.76px;
-  width: calc(101.5% - 1px);
+  width: calc(100.7% - 1.76px);
   padding-right: 10%;
   padding-left: 10%;
   height: auto;

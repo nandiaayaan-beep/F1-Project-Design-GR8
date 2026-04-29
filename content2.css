@@ -165,8 +165,8 @@ html, body {
     margin-top: 50px;
     justify-content: space-evenly;
     flex-direction: column;
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 7%;
+    padding-left: 7%;
     background: repeating-linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.05) 0px,
@@ -399,8 +399,8 @@ html, body {
     gap: 20px;
     width: 25%;
     max-width: 25%;
-    height: 45%;
-    max-height: 45%;
+    height: 250px;
+    max-height: 250px;
     min-width: 0;
     align-items: flex-start;
     border-radius: 12px;
@@ -428,7 +428,7 @@ html, body {
 
 /* Mercedes - box 1: Kimi Antonelli */
 .timelinepair1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('KimiAntonelli.avif');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('KimiAntonelli.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
@@ -473,6 +473,7 @@ html, body {
     background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('LewisHamilton.webp');
     background-size: cover;
     background-position: center;
+    background-size: 100% 100%;
     box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
 }
 
@@ -743,7 +744,7 @@ html, body {
 /* TEAM ITEMS START FROM HERE */
 /* Mercedes - team */
 .timelinepair1team {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url('MercedesTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
@@ -757,7 +758,7 @@ html, body {
 
 /* Ferrari - team */
 .timelinepair3team {
-    background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(220, 0, 0, 0.38), rgba(220, 0, 0, 0.38)), url('FerrariTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
@@ -771,7 +772,7 @@ html, body {
 
 /* McLaren - team */
 .timelinepair5team {
-    background: linear-gradient(rgba(255, 135, 0, 0.2), rgba(255, 135, 0, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(255, 135, 0, 0.34), rgba(255, 135, 0, 0.34)), url('MclarenCar.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(255, 135, 0, 0.6);
@@ -785,7 +786,7 @@ html, body {
 
 /* Haas - team */
 .timelinepair7team {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(20, 20, 20, 0.48), rgba(20, 20, 20, 0.48)), url('HaasTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
@@ -799,7 +800,7 @@ html, body {
 
 /* Alpine - team */
 .timelinepair9team {
-    background: linear-gradient(rgba(0, 100, 150, 0.2), rgba(0, 100, 150, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(0, 100, 150, 0.34), rgba(0, 100, 150, 0.34)), url('AlpineTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(0, 100, 150, 0.6);
@@ -813,7 +814,7 @@ html, body {
 
 /* Red Bull Racing - team */
 .timelinepair11team {
-    background: linear-gradient(rgba(1, 33, 124, 0.25), rgba(1, 33, 124, 0.25)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(1, 33, 124, 0.4), rgba(1, 33, 124, 0.4)), url('RedBullTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(1, 33, 124, 0.6);
@@ -827,7 +828,7 @@ html, body {
 
 /* Racing Bulls - team */
 .timelinepair13team {
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(45, 45, 45, 0.42), rgba(45, 45, 45, 0.42)), url('RacingBullsTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.6);
@@ -841,7 +842,7 @@ html, body {
 
 /* Audi - team */
 .timelinepair15team {
-    background: linear-gradient(rgba(206, 18, 18, 0.2), rgba(206, 18, 18, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(206, 18, 18, 0.34), rgba(206, 18, 18, 0.34)), url('AudiTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(206, 18, 18, 0.6);
@@ -855,7 +856,7 @@ html, body {
 
 /* Williams - team */
 .timelinepair17team {
-    background: linear-gradient(rgba(0, 120, 191, 0.2), rgba(0, 120, 191, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(0, 120, 191, 0.34), rgba(0, 120, 191, 0.34)), url('WilliamsTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(0, 120, 191, 0.6);
@@ -869,7 +870,7 @@ html, body {
 
 /* Cadillac - team */
 .timelinepair19team {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url('CadillacTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(192, 192, 192, 0.6);
@@ -883,7 +884,7 @@ html, body {
 
 /* Aston Martin - team */
 .timelinepair21team {
-    background: linear-gradient(rgba(0, 150, 0, 0.2), rgba(0, 150, 0, 0.2)), url('1950firstgp.jpg');
+    background: linear-gradient(rgba(0, 150, 0, 0.36), rgba(0, 150, 0, 0.36)), url('AstonMartinTeam.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 8px 32px rgba(0, 150, 0, 0.6);
