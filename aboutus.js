@@ -1,61 +1,76 @@
-// Auto-grow textareas: expands in height as user types
-document.addEventListener('DOMContentLoaded', function () {
-  const textareas = document.querySelectorAll('.form-input');
+document.addEventListener("DOMContentLoaded", function () {
+  const allInputs = document.querySelectorAll(".form-input");
 
-  textareas.forEach(function (ta) {
-    ta.addEventListener('input', function () {
-      this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 'px';
+  allInputs.forEach(function (inputBox) {
+    inputBox.addEventListener("input", function () {
+      inputBox.style.height = "auto";
+      inputBox.style.height = inputBox.scrollHeight + "px";
     });
   });
 
-  // Feedback form submit handler
-  const feedbackForm = document.getElementById('feedbackForm');
-  if (feedbackForm) {
-    feedbackForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const nameVal = document.getElementById('fb-name').value.trim();
-      const emailVal = document.getElementById('fb-email').value.trim();
-      const msgVal = document.getElementById('fb-message').value.trim();
+  const feedbackForm = document.getElementById("feedbackForm");
+  const nameInput = document.getElementById("fb-name");
+  const emailInput = document.getElementById("fb-email");
+  const messageInput = document.getElementById("fb-message");
+  const successMessage = document.querySelector(".feedback-success");
 
-      if(nameVal === "" || emailVal === "" || msgVal === "") {
-        alert("Please fill in all fields");
-        return;
-      }
-      // Validate email format using regex (allows all valid TLDs including country codes)
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailVal)) {
-        alert("Please enter a valid email address");
-        return;
-      }
-      // Prevent domain stacking (multiple TLDs like .com.net)
-      const domainPart = emailVal.split('@')[1];
-      if (domainPart && domainPart.split('.').length > 2) {
-        alert("Please enter a valid email with only one domain extension");
-        return;
-      }
-
-      const formData = new FormData(this);
-
-const response = await fetch("https://tdoiwxffaoxexompcqmp.supabase.co/rest/v1/feedback", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "apikey": "sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg",
-    "Authorization": "Bearer sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg",
-    "Prefer": "return=minimal"
-  },
-  body: JSON.stringify({
-    name: nameVal,
-    email: emailVal,
-    feedback: msgVal
-  })
-});
-
-      if (response.ok) {
-        this.classList.add('hidden');
-        document.querySelector('.feedback-success').classList.add('show');
-      }
-    });
+  if (!feedbackForm || !nameInput || !emailInput || !messageInput || !successMessage) {
+    return;
   }
+
+  feedbackForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    const domainPart = email.split("@")[1];
+    if (domainPart && domainPart.split(".").length !== 2) {
+      alert("Please enter a valid email with <strong>one</strong> domain extension");
+      return;
+    }
+
+    const supabaseUrl = "https://tdoiwxffaoxexompcqmp.supabase.co/rest/v1/feedback";
+    const apiKey = "sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg";
+
+    try {
+      const response = await fetch(supabaseUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": apiKey,
+          "Authorization": `Bearer ${apiKey}`,
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          feedback: message
+        })
+      });
+
+      if (!response.ok) {
+        alert("Error submitting feedback. Please try again later.");
+        return;
+      }
+
+      feedbackForm.classList.add("hidden");
+      successMessage.classList.add("show");
+    } catch (error) {
+      alert("Error submitting feedback. Please try again later.");
+    }
+  });
 });

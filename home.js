@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.header1');
   const navbar = document.querySelector('.navbar');
   const button = document.querySelector('.hero-next');
   const dots = document.querySelectorAll('.hero-dot');
@@ -52,11 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function finishSlideTransition() {
     currentSlide.style.backgroundImage = nextSlide.style.backgroundImage;
     currentSlide.classList.remove('animating-out');
+    currentSlide.classList.remove('animating-out-reverse');
     nextSlide.classList.remove('animating-in');
+    nextSlide.classList.remove('animating-in-reverse');
     nextSlide.style.transform = 'translateX(100%)';
     currentCaption.textContent = nextCaption.textContent;
     currentCaption.classList.remove('animating-out');
+    currentCaption.classList.remove('animating-out-reverse');
     nextCaption.classList.remove('animating-in');
+    nextCaption.classList.remove('animating-in-reverse');
     nextCaption.style.transform = 'translateX(100%)';
     isAnimating = false;
   }
@@ -102,9 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
     nextCaption.textContent = altTexts[current];
 
     currentSlide.classList.remove('animating-out');
+    currentSlide.classList.remove('animating-out-reverse');
     nextSlide.classList.remove('animating-in');
+    nextSlide.classList.remove('animating-in-reverse');
     currentCaption.classList.remove('animating-out');
+    currentCaption.classList.remove('animating-out-reverse');
     nextCaption.classList.remove('animating-in');
+    nextCaption.classList.remove('animating-in-reverse');
+
+    nextSlide.style.transform = 'translateX(100%)';
+    nextCaption.style.transform = 'translateX(100%)';
 
     void currentSlide.offsetWidth;
 
@@ -114,30 +124,94 @@ document.addEventListener('DOMContentLoaded', () => {
     nextCaption.classList.add('animating-in');
 
     nextSlide.addEventListener('animationend', finishSlideTransition, { once: true });
-    currentCaption.addEventListener('animationend', finishSlideTransition, { once: true });
+  }
+
+  function showNextBackground() {
+    const nextIndex = (current + 1) % backgrounds.length;
+    showBackground(nextIndex);
+  }
+
+  function showPreviousBackground() {
+    if (!currentSlide || !nextSlide || !currentCaption || !nextCaption || isAnimating) {
+      return;
+    }
+
+    const previousIndex = (current - 1 + backgrounds.length) % backgrounds.length;
+    const previousCurrent = current;
+
+    current = previousIndex;
+    updateDots();
+    updateAlts();
+
+    isAnimating = true;
+    currentSlide.style.backgroundImage = backgrounds[previousCurrent];
+    nextSlide.style.backgroundImage = backgrounds[current];
+    currentCaption.textContent = altTexts[previousCurrent];
+    nextCaption.textContent = altTexts[current];
+
+    currentSlide.classList.remove('animating-out');
+    currentSlide.classList.remove('animating-out-reverse');
+    nextSlide.classList.remove('animating-in');
+    nextSlide.classList.remove('animating-in-reverse');
+    currentCaption.classList.remove('animating-out');
+    currentCaption.classList.remove('animating-out-reverse');
+    nextCaption.classList.remove('animating-in');
+    nextCaption.classList.remove('animating-in-reverse');
+
+    nextSlide.style.transform = 'translateX(-100%)';
+    nextCaption.style.transform = 'translateX(-100%)';
+
+    void currentSlide.offsetWidth;
+
+    currentSlide.classList.add('animating-out-reverse');
+    nextSlide.classList.add('animating-in-reverse');
+    currentCaption.classList.add('animating-out-reverse');
+    nextCaption.classList.add('animating-in-reverse');
+
+    nextSlide.addEventListener('animationend', finishSlideTransition, { once: true });
   }
 
   function cycleBackground() {
-    const nextIndex = (current + 1) % backgrounds.length;
-    showBackground(nextIndex);
+    showNextBackground();
   }
 
   showBackground(current, false);
   let backgroundInterval = setInterval(cycleBackground, 4000);
 
+  function resetBackgroundInterval() {
+    clearInterval(backgroundInterval);
+    backgroundInterval = setInterval(cycleBackground, 4000);
+  }
+
   if (button) {
     button.addEventListener('click', () => {
-      cycleBackground();
-      clearInterval(backgroundInterval);
-      backgroundInterval = setInterval(cycleBackground, 4000);
+      if (isAnimating === false) {
+        showNextBackground();
+        resetBackgroundInterval();
+      }
     });
   }
 
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       showBackground(index);
-      clearInterval(backgroundInterval);
-      backgroundInterval = setInterval(cycleBackground, 4000);
+      resetBackgroundInterval();
     });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+      if (isAnimating === false) {
+        showNextBackground();
+        resetBackgroundInterval();
+      }
+    }
+
+    if (event.key === 'ArrowLeft') {
+      if (isAnimating === false) {
+        showPreviousBackground();
+        resetBackgroundInterval();
+      }
+    }
   });
 });
