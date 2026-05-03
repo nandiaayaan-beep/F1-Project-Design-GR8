@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const domainPart = email.split("@")[1];
     if (domainPart && domainPart.split(".").length !== 2) {
-      alert("Please enter a valid email with <strong>one</strong> domain extension");
+      alert("Please enter a valid email with one domain extension");
       return;
     }
 

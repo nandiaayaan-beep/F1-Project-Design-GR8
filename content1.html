@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>F1, Speed and Engineering - The Sport & Cars</title>
         <link rel="stylesheet" href="content1.css">
-        <script src="home.js"></script>
+        <script src="content1.js" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -26,6 +26,59 @@
             <a class="nav-link" href="aboutus.html">About Us </a>
             </nav>
             </div>
+            <!-- Sidebar hover trigger strip -->
+            <div class="sidebar-trigger" id="sidebarTrigger"></div>
+
+            <!-- FACTS tab that peeks from the right edge -->
+            <div class="sidebar-tab" id="sidebarTab">FACTS</div>
+
+            <!-- Facts sidebar popup -->
+            <aside class="hero-facts" id="heroFacts">
+                <div class="hero-facts-inner">
+                        <ul class="bullet-points">
+                            <li class="list-item">
+                                <p>Formula 1 uses strict FIA technical rules, so teams cannot simply add unlimited power, unlimited fuel, or oversized aerodynamic parts. The rules keep speeds manageable, control costs, and force engineers to find smarter solutions.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p>F1 cars are expensive because every part is designed for minimum weight, maximum strength, and tiny performance gains. Teams also work under financial regulations, so deciding where to spend development time is part of the competition.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p>Even tiny setup changes to wing angle, suspension stiffness, brake balance, or ride height can transform how the car behaves from one corner to the next.</p>
+                            </li>
+                            <li class="list-item">
+                                <p>Driver skill matters as much as machinery, especially in braking zones, tire saving, race starts, wet conditions, and moments when the car is not perfectly balanced.
+                                </p>
+                            </li>
+                        </ul>
+
+                        <img class="fact-image" src="1950firstgp.jpg" alt="Formula 1 car on track">
+                        <p class="fact-caption">The Mercedes-AMG F1 W11 is often remembered as one of the strongest cars of the modern hybrid era. In 2020, Lewis Hamilton and Mercedes combined elite driving, reliability, tire management, and aerodynamic performance to dominate a shortened but highly competitive season.</p>
+
+                        <ul class="bullet-points">
+                            <li class="list-item">
+                                <p>F1 power units are not weak; they are tightly regulated and extremely efficient. Their challenge is to deliver performance while obeying limits on fuel flow, energy recovery, reliability, weight, and packaging.</p>
+                            </li>
+                            <li class="list-item">
+                                <p>Pit stops can decide a race. A crew must change tires in seconds, while strategists choose the right lap to stop based on traffic, tire wear, safety cars, and the gap to rivals.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p>F1 engineering blends physics, mathematics, materials science, software, data analysis, and aerodynamics. The best teams turn simulator data, driver feedback, and wind-tunnel research into upgrades that work on track.
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p>Being an F1 driver requires more than physical fitness. Drivers must understand racing lines, tire temperatures, battery deployment, braking points, car setup, and race strategy while reacting at extreme speed.
+                                </p>
+                            </li>
+                        </ul>
+
+                        <img class="fact-image" src="1950firstgp.jpg" alt="Formula 1 car on track">
+                        <p class="fact-caption">Not every track-focused car is slower than an F1 car in every situation. Special projects such as the Porsche 919 Hybrid Evo and the McMurtry Spéirling were built around very different rules, allowing unusual levels of power, downforce, and freedom in design.</p>
+                </div>
+            </aside>
+
             <main class="main">
                 <section class="hero-part1">
                     <div class="hero-maininfo">
@@ -37,10 +90,15 @@
                                 <p class="info1"> Formula 1 is a global motorsport championship that usually runs from early spring to late autumn, visiting permanent circuits, street tracks, and high-speed venues around the world. The modern grid features 11 teams and 22 drivers, with points awarded to the top 10 finishers in each Grand Prix using the 25-18-15-12-10-8-6-4-2-1 system. Drivers fight for the World Drivers' Championship, while teams combine the points from both cars to contest the Constructors' Championship. Every car must follow strict FIA rules, so success comes from finding performance inside tight limits: better aerodynamics, smarter strategy, stronger reliability, and drivers who can deliver under pressure.
                                 </p>
                             </div>
-                            <video class="hero-video" controls>
-                                <source src="f1-video.mp4" type="video/mp4">
-                            </video>
-                            <br>
+                            <div class="hero-video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/BkKzBCwY5fI"
+                                    title="Formula 1 Points Explained"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
                          
                         <div class="columns">
@@ -90,61 +148,18 @@
                         </header>
                         <div class="alignitemsdisplayrow">
                             <div class="p3content">
-                        <P class="p3">Sports cars are designed to mix performance with comfort and everyday usability. Supercars push further toward performance, usually with more power, lighter materials, dramatic styling, and sharper handling. Hypercars sit at the extreme end of road-car engineering, using advanced hybrid systems, huge power figures, and race-inspired aerodynamics.
-                            <br><br>Formula 1 cars are different because they are built for one job: producing the fastest possible lap under a strict rulebook. They do not need luggage space, comfort, headlights, road tires, or long service intervals. They are light, low, fragile, and optimized for circuits. A hypercar might win a top-speed contest, but an F1 car usually dominates braking zones and high-speed corners because it creates enormous downforce and uses slick racing tires. That is why lap time is about the whole package, not just horsepower.
+                        <P class="p3">Sports cars are designed to mix performance with comfort and everyday usability. They typically feature rear-wheel or all-wheel drive, tuned suspensions, and engines built for more than commuting. Supercars push further toward outright performance, usually with more power, lighter materials, dramatic styling, and sharper handling that demands an experienced driver to fully exploit.
+                            <br><br>Hypercars sit at the extreme end of road-car engineering, where cost is almost no object. Examples like the Bugatti Chiron, Koenigsegg Jesko, and Rimac Nevera use advanced hybrid or fully electric systems, enormous power figures, and race-inspired aerodynamics to achieve speeds and acceleration that were unimaginable from a road-legal car just a decade ago. Some, like the Mercedes-AMG One, transplant a near-literal F1 power unit into a street car.
+                            <br><br>What separates a hypercar from everything below it is not just power but the level of engineering integration. Active aerodynamics, torque vectoring, sophisticated traction control, and carbon fibre construction all work together as a system. Driving one at its limit requires serious skill, and many owners never experience the full capability of the car they have purchased.
+                            <br><br>Formula 1 cars are different because they are built for one job: producing the fastest possible lap under a strict rulebook. They do not need luggage space, comfort, headlights, road tires, or long service intervals. They are light, low, fragile, and completely optimized for circuits. A hypercar might compete in a straight-line top-speed contest, but an F1 car dominates braking zones and high-speed corners because it generates enormous downforce and runs on slick racing tires engineered for one race distance.
+                            <br><br>That gap between road cars and F1 machinery also highlights how much of motorsport development quietly filters down into production vehicles over time. Hybrid systems, carbon fibre body panels, paddle-shift gearboxes, and advanced brake materials all have roots in racing. In that sense, the hypercar and the F1 car are not opposites — the hypercar is often where yesterday's F1 technology eventually lands.
                         </p>
                         </div>
                         <img class="p3img" src="p3img.jpg" alt="...">
-                </div>
-                </div>
-                    <section class="hero-facts">
-                        <ul class="bullet-points">
-                            <li class="list-item">
-                                <p>Formula 1 uses strict FIA technical rules, so teams cannot simply add unlimited power, unlimited fuel, or oversized aerodynamic parts. The rules keep speeds manageable, control costs, and force engineers to find smarter solutions.
-                                </p>
-                            </li>
-                            <li class="list-item">
-                                <p>F1 cars are expensive because every part is designed for minimum weight, maximum strength, and tiny performance gains. Teams also work under financial regulations, so deciding where to spend development time is part of the competition.
-                                </p>
-                            </li>
-                            <li class="list-item">
-                                <p>Even tiny setup changes to wing angle, suspension stiffness, brake balance, or ride height can transform how the car behaves from one corner to the next.</p>
-                            </li>
-                            <li class="list-item">
-                                <p>Driver skill matters as much as machinery, especially in braking zones, tire saving, race starts, wet conditions, and moments when the car is not perfectly balanced.
-                                </p>
-                            </li>
-                        </ul>
-                        
-
-                        <img class="fact-image" src="1950firstgp.jpg" alt="Formula 1 car on track">
-                        <p class="fact-caption">The Mercedes-AMG F1 W11 is often remembered as one of the strongest cars of the modern hybrid era. In 2020, Lewis Hamilton and Mercedes combined elite driving, reliability, tire management, and aerodynamic performance to dominate a shortened but highly competitive season.
-
-                        </p>
-                                                <ul class="bullet-points">
-                            <li class="list-item">
-                                <p>F1 power units are not weak; they are tightly regulated and extremely efficient. Their challenge is to deliver performance while obeying limits on fuel flow, energy recovery, reliability, weight, and packaging.</p>
-                            </li>
-                            <li class="list-item">
-                                <p>Pit stops can decide a race. A crew must change tires in seconds, while strategists choose the right lap to stop based on traffic, tire wear, safety cars, and the gap to rivals.
-                                </p>
-                            </li>
-                            <li class="list-item">
-                                <p>F1 engineering blends physics, mathematics, materials science, software, data analysis, and aerodynamics. The best teams turn simulator data, driver feedback, and wind-tunnel research into upgrades that work on track.
-                                </p>
-                            </li>
-                            <li class="list-item">
-                                <p>Being an F1 driver requires more than physical fitness. Drivers must understand racing lines, tire temperatures, battery deployment, braking points, car setup, and race strategy while reacting at extreme speed.
-                                </p>
-                            </li>
-                        </ul>
-
-                        <img class="fact-image" src="1950firstgp.jpg" alt="Formula 1 car on track">
-                        <p class="fact-caption">Not every track-focused car is slower than an F1 car in every situation. Special projects such as the Porsche 919 Hybrid Evo and the McMurtry Spéirling were built around very different rules, allowing unusual levels of power, downforce, and freedom in design.</p>
-                                    </ul>
-                    </section>
-            </div>
-                </section>
+                        </div>
+                    </div>
+                    </div><!-- end .hero-maininfo -->
+                </section><!-- end .hero-part1 -->
                 <section class="part2">
                     <header>
                         <h1 class="header4">Timeline</h1>

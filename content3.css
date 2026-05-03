@@ -130,10 +130,24 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 html, body {
   margin: 0;
-  padding-right: 10px;
-  padding-left: 10px;
+  background-color: rgb(23, 23, 23);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  
+}
+
+body > main {
+  flex: 1;
 }
 
 .html {
@@ -146,8 +160,9 @@ html, body {
 }
 
 .section.drivers-section {
-  padding-top: 130px;
+  margin-top: 130px;
 }
+
 
 .section-title {
     border-bottom: 2px solid white;
@@ -333,6 +348,8 @@ html, body {
   border-left: 2px solid rgba(255, 255, 255, 0.9);
   position: relative;
   z-index: 1;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .team-card--ferrari {
@@ -735,6 +752,8 @@ html, body {
       background-color: #000000;;
         border: 2px solid rgba(255, 255, 255, 0.9);
   transition: opacity 0.3s ease;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .teams-grid--hover-ferrari { border: 2px solid rgba(255, 0, 0, 0.8); }
@@ -941,8 +960,8 @@ html, body {
       }}
 
 .site-footer {
-  margin-top: 32px;
   padding-top: 18px;
+  margin-top: 192px;
   padding-bottom: 10px;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   background:

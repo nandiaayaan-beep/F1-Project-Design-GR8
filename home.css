@@ -388,20 +388,18 @@ html, body {
 .content {
     position: relative;
     z-index: 0;
-    margin: 3% 6%;
-    margin-right: 15%;
-    margin-left: 15%;
-    padding: 30px 0;
+    margin: 3% 0;
+    padding: 30px 15%;
 }
 
 .content::before {
     content: "";
     position: absolute;
     top: 0;
-    bottom: 0px;
-    left: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    transform: translateX(-50%);
     background: repeating-linear-gradient(
       -45deg,
       rgba(255, 255, 255, 0.05) 0px,
@@ -414,7 +412,6 @@ html, body {
     backdrop-filter: blur(6px);
     background-size: 20px 20px;
     background-color: #000000;
-    max-height: 100%;
     z-index: -1;
 }
 

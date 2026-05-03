@@ -147,14 +147,128 @@ html, body {
 .hero-part1 {
     padding-top: 130px;
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    padding-right: 10%;
-    padding-left: 10%;
-    max-width: 100%;
+    flex-direction: column;
+    padding-right: 5%;
+    padding-left: 5%;
+    width: 100%;
+    box-sizing: border-box;
     position: relative;
     gap: 0;
 }
+
+ :root {
+     --facts-width: max(220px, calc(15vw - 20px));
+ }
+
+/* ── Sidebar animations ─────────────────────────────────────────── */
+@keyframes slideIn {
+    0%   { transform: translateX(-125%); }
+    100% { transform: translateX(0%);   }
+}
+
+@keyframes slideOut {
+    0%   { transform: translateX(0%);   }
+    100% { transform: translateX(-125%); }
+}
+
+.sidebar-trigger {
+    position: fixed;
+    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 200;
+}
+
+.hero-facts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--facts-width);
+    min-width: 220px;
+    height: 100vh;
+    z-index: 199;
+    transform: translateX(-125%);
+    pointer-events: none;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(38,38,38,0.60) 25%, transparent 25%) -10px 0 / 20px 20px,
+        linear-gradient(225deg, rgba(27,26,26,0.60) 25%, transparent 25%) -10px 0 / 20px 20px,
+        linear-gradient(315deg, rgba(54,52,52,0.60) 25%, transparent 25%)  0   0 / 20px 20px,
+        linear-gradient(45deg,  rgba(34,34,34,0.60) 25%, transparent 25%)  0   0 / 20px 20px,
+        #111;
+    border-left: 2px solid rgba(205, 2, 2, 0.75);
+    box-shadow: -6px 0 32px rgba(205, 2, 2, 0.28), -2px 0 10px rgba(0,0,0,0.7);
+}
+
+.hero-facts.open {
+    animation: slideIn 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    pointer-events: auto;
+}
+
+.hero-facts.close {
+    animation: slideOut 0.38s ease-in forwards;
+    pointer-events: none;
+}
+
+.hero-facts-inner {
+    height: 100%;
+    overflow-y: auto;
+    padding: 80px 16px 24px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(205,2,2,0.5) transparent;
+}
+
+.hero-facts-inner::-webkit-scrollbar-thumb {
+    background: rgba(205,2,2,0.5);
+    border-radius: 4px;
+}
+
+.hero-facts p {
+    margin: 0;
+    color: white;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.sidebar-tab {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    writing-mode: vertical-lr;
+    transform: translateX(0) translateY(-50%) rotate(180deg);
+    z-index: 201;
+    padding: 14px 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(205,2,2,0.90);
+    text-shadow: 0 0 8px rgba(205,2,2,0.65);
+    background: rgba(17,17,17,0.85);
+    border-left: 2px solid rgba(205,2,2,0.5);
+    border-top: 2px solid rgba(205,2,2,0.5);
+    border-bottom: 2px solid rgba(205,2,2,0.5);
+    border-radius: 6px 0 0 6px;
+    cursor: pointer;
+    transition: opacity 0.3s, pointer-events 0.3s, transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-tab.open {
+    transform: translateX(var(--facts-width)) translateY(-50%) rotate(180deg);
+}
+
+.sidebar-tab.close {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0) translateY(-50%) rotate(180deg);
+    transition: opacity 0.38s, pointer-events 0.38s, transform 0.38s ease-in;
+}
+
 
 .p2content {
     align-items: flex-start;
@@ -166,11 +280,8 @@ html, body {
     gap: 24px;
     position: relative;
     flex: 1;
-    border-right: 2px solid white;
-    min-height: 1100px;
-    margin-right: 15px;
-    padding-right: 20px;
     min-width: 0;
+    width: 100%;
 }
 
 .intro-layout {
@@ -212,27 +323,11 @@ html, body {
 }
 
 .hero-part1 > .hero-maininfo {
-    max-width: 75%;
+    max-width: 100%;
+    width: 100%;
 }
 
-.hero-part1 > .hero-facts {
-    max-width: 25%;
-}
 
-.hero-facts {
-    padding-left: 20px;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-self: flex-start;
-    gap: 12px;
-    width: 280px;
-    margin-left: auto;
-    text-align: left;
-    position: relative;
-}
 
 .fact-image {
     min-width: auto;
@@ -293,12 +388,6 @@ html, body {
     text-align: left;
 }
 
-.hero-facts p {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    text-align: left;
-}
 
 .p3 {
     max-width: 95%;
@@ -333,19 +422,19 @@ html, body {
 .subheader1 {
     border-bottom: 1px solid gray;
     color: gray;
-    max-width: 23%
+    display: inline-block;
 }
 
 .subheader2 {
     border-bottom: 1px solid gray;
     color: gray;
-    max-width: 23%
+    display: inline-block;
 }
 
 .subheader3 {
     border-bottom: 1px solid gray;
     color: gray;
-    max-width: 32%
+    display: inline-block;
 }
 
 .columns {
@@ -395,8 +484,8 @@ html, body {
 
 @media (max-width: 900px) {
     .hero-part1 {
-        padding-left: 8%;
-        padding-right: 8%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .intro-layout {
@@ -428,8 +517,8 @@ html, body {
     margin-top: 50px;
     justify-content: space-evenly;
     flex-direction: column;
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 5%;
+    padding-left: 5%;
     background: repeating-linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.05) 0px,
@@ -484,7 +573,7 @@ html, body {
 .timelinepdate {
     font-weight: bold;
     position: relative;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .header4 {
