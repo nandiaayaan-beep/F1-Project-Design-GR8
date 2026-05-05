@@ -599,7 +599,6 @@ html, body {
     background: linear-gradient(rgba(220, 0, 0, 0.2), rgba(220, 0, 0, 0.2)), url('LewisHamilton.webp');
     background-size: cover;
     background-position: center;
-    background-size: 100% 100%;
     box-shadow: 0 8px 32px rgba(220, 0, 0, 0.6);
 }
 

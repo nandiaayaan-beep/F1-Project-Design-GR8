@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const apiKey = "sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg";
 
     try {
+
       const response = await fetch(supabaseUrl, {
         method: "POST",
         headers: {

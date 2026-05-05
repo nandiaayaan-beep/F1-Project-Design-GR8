@@ -599,12 +599,12 @@ html, body {
     0 0 14px rgba(205, 2, 2, 0.3);
 }
 
-/* Email — slightly taller to feel wider relative to name */
+/* Email */
 .form-input--wide {
   min-height: 44px;
 }
 
-/* Feedback textarea — tall like the message box in the video */
+/* Feedback textarea */
 .form-input--message {
   min-height: 130px;
 }
