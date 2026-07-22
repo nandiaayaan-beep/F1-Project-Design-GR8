@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextCaption.classList.remove('animating-in-reverse');
 
     nextSlide.style.transform = 'translateX(-100%)';
-    nextCaption.style.transform = 'translateX(-100%)';
+    nextCaption.style.transfqorm = 'translateX(-100%)';
 
     void currentSlide.offsetWidth;
 

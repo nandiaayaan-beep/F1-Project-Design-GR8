@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
         driverGrid.classList.remove(gridClass);
       }
 
-      for (let [cardClass, gridClass] of entries) {
-        if (card.classList.contains(cardClass)) {
+      for (let [otherCardClass, gridClass] of entries) {
+        if (card.classList.contains(otherCardClass)) {
           driverGrid.classList.add(gridClass);
 
           // Remove all hoverOn classes from all cards first
@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // Add the hoverOn class of the hovered driver to all cards
           const hoverOnClass = cardHoverOnClasses[cardClass];
-          for (let otherCardClass of Object.keys(cardHoverOnClasses)) {
-            const otherCard = document.querySelector('.' + otherCardClass);
-            if (otherCard) {
+          for (let CardClass2 of Object.keys(cardHoverOnClasses)) {
+            const otherCard = document.querySelector('.' + CardClass2);
+            if (card.classList.contains(CardClass2)) {
               otherCard.classList.add(hoverOnClass);
             }
           }

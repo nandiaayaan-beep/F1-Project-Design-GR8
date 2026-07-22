@@ -329,7 +329,6 @@ body > main {
   transform: translateY(-8px);
 }
 
-/* ===== Team Cards ===== */
 .team-card {
   background: linear-gradient(
     to right,
@@ -390,7 +389,6 @@ body > main {
   transform: translateY(-8px);
 }
 
-/* ===== Team Card Content Row ===== */
 .team-card__content {
   display: flex;
   flex-direction: row;
@@ -450,7 +448,6 @@ body > main {
   display: block;
 }
 
-/* ===== Driver Display (attached panel under card) ===== */
 .driver-display {
   position: absolute;
   top: 100;
@@ -562,7 +559,6 @@ body > main {
   border-bottom: 2px solid rgba(192, 192, 192, 1);
 }
 
-/* ===== Driver Display Show (combined visible + team) ===== */
 .driver-display--show-hamilton {
   opacity: 1;
   transform: translateY(-2px);
@@ -643,7 +639,6 @@ body > main {
   border-bottom: 2px solid rgba(192, 192, 192, 1);
 }
 
-/* ===== Team Display (attached panel under team card) ===== */
 .team-display {
   position: absolute;
   top: 100%;
@@ -712,27 +707,16 @@ body > main {
   border-bottom: 2px solid rgba(255, 130, 0, 1);
 }
 
-/* ===== Driver Card Hover-On States ===== */
-/* ===== Driver Card Hover-On States ===== */
-/* ===== Driver Card Hover-On States ===== */
-/* ===== Driver Card Hover-On States ===== */
-/* ===== Driver Card Hover-On States ===== */
-/* ===== Driver Card Hover-On States ===== */
-/* ===== Driver Card Hover-On States ===== */
 .driver-card--hoverOnHamilton { border-left: 2px solid rgba(0, 212, 170, 1); box-shadow: 0 10px 30px rgba(0, 212, 170, 0.6); }
 .driver-card--hoverOnVerstappen { border-left: 2px solid rgba(255, 0, 0, 1); box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6); }
 .driver-card--hoverOnSenna { border-left: 2px solid rgba(255, 130, 0, 1); box-shadow: 0 10px 30px rgba(255, 130, 0, 0.6); }
 .driver-card--hoverOnSchumacher { border-left: 2px solid rgba(255, 0, 0, 1); box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6); }
 .driver-card--hoverOnFangio { border-left: 2px solid rgba(192, 192, 192, 1); box-shadow: 0 10px 30px rgba(192, 192, 192, 0.6); }
 
-/* ===== Team Card Hover-On States ===== */
 .team-card--hoverOnFerrari { border-left: 2px solid rgba(255, 0, 0, 1); box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6); }
 .team-card--hoverOnMclaren { border-left: 2px solid rgba(255, 130, 0, 1); box-shadow: 0 10px 30px rgba(255, 130, 0, 0.6); }
 
-/* ===== Team Card Transparent State ===== */
 
-
-/* ===== Teams Grid Hover States ===== */
 .teams-grid {
   display: flex;
   justify-content: space-evenly;
@@ -765,7 +749,6 @@ body > main {
   transition: opacity 0.3s ease;
 }
 
-/* ===== Medal ===== */
 .medal--gold {
   display: inline-flex;
   flex-direction: column;

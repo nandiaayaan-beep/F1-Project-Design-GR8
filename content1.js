@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateNavbar);
 
 
-    // ── Sidebar ──────────────────────────────────────────────────────
+    // Sidebar
     const trigger = document.getElementById('sidebarTrigger');
     const sidebar = document.getElementById('heroFacts');
     const tab     = document.getElementById('sidebarTab');
@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let isAnimating = false
     let isHovering = false;
     let pendingClose = false;
-
-    const CLOSE_DELAY_MS = 10;
 
     const openSidebar = () => {
         clearTimeout(timer);
@@ -50,23 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         if (!isOpen) return;
+        if (isAnimating) return;
         isOpen = false;
-        pendingClose = true;
         isAnimating = true;
+        pendingClose = false;
         sidebar.classList.remove('open');
         sidebar.classList.add('close');
         tab.classList.remove('open');
         tab.classList.add('close');
-
         setTimeout(() => {
             isAnimating = false;
-        }, 380);
-
-        sidebar.addEventListener('animationend', () => {
-            sidebar.classList.remove('close');
-            sidebar.style.transform = 'translateX(-125%)';
-            tab.classList.remove('close');
-        }, { once: true });
+            if (!isHovering && pendingClose) {
+                closeSidebar();
+            }
+        }, 680);
     };
 
     trigger.addEventListener('mouseenter', () => {
@@ -81,12 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.addEventListener('mouseleave', () => {
         isHovering = false;
         pendingClose = true;
-        timer = setTimeout(closeSidebar, CLOSE_DELAY_MS);
+        timer = setTimeout(closeSidebar, 10);
     });
     sidebar.addEventListener('mouseleave', () => {
         isHovering = false;
         pendingClose = true;
-        timer = setTimeout(closeSidebar, CLOSE_DELAY_MS);
+        timer = setTimeout(closeSidebar, 10);
     });
     tab.addEventListener('click', openSidebar);
 

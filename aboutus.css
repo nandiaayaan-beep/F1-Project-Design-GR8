@@ -1,6 +1,3 @@
-/* =====================
-   NAVBAR
-   ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -81,42 +78,9 @@
   display: inline-block;
   transition: color 0.5s ease-out, text-shadow 0.5s ease-out, transform 0.5s ease-out;
   transform-origin: center;
-
-  /*
-   * ============================================================
-   * NAVBAR UNDERLINE HOVER ANIMATION — COPY THIS TO OTHER FILES
-   * ============================================================
-   * position: relative is REQUIRED so the ::after pseudo-element
-   * can use absolute positioning relative to this link element.
-   * We removed transform: scale() here so it doesn't fight the
-   * underline width transition (both would compete visually).
-   */
   position: relative;
 }
 
-/*
- * ============================================================
- * NAVBAR UNDERLINE ::after — COPY THIS TO OTHER FILES
- * ============================================================
- * This creates the animated underline on hover.
- *
- * How it works:
- *   - ::after is a fake empty box sitting below each nav link
- *   - At rest: width is 0 (completely invisible)
- *   - On hover: width transitions to 100% (full width of the text)
- *   - The transition on width creates the left-to-right draw effect
- *   - transform-origin: left ensures it grows FROM the left side
- *
- * The key properties:
- *   content: ''        → required, makes the pseudo-element exist
- *   position: absolute → sits relative to the .nav-link above
- *   bottom: 0          → hugs the bottom of the text
- *   left: 0            → anchored to the left edge
- *   width: 0           → invisible at rest
- *   height: 2px        → thickness of the underline
- *   background-color   → the red colour of the line
- *   transition: width  → this is what animates it left → right
- */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -128,10 +92,8 @@
   box-shadow:
     0 0 4px rgba(205, 2, 2, 0.8),
     0 0 10px rgba(205, 2, 2, 0.5);
-  transition: width 0.35s ease-out;  /* the animation: grows from 0 to full width */
+  transition: width 0.35s ease-out; 
 }
-
-/* On hover: grow the underline to full width of the link text */
 .nav-link:hover::after {
   width: 100%;
 }
@@ -145,9 +107,6 @@
   transform: scale(1.1);
 }
 
-/* =====================
-   GLOBAL RESET
-   ===================== */
 * {
   box-sizing: border-box;
 }
@@ -164,17 +123,12 @@ html, body {
   max-width: 100%;
 }
 
-/* =====================
-   ABOUT US: 75-25 LAYOUT
-   ===================== */
-
-/* Outer wrapper — pushes content below the fixed navbar */
 .aboutus-main {
   padding-top: 130px;
   max-width: 100%;
 }
 
-/* The two-column row */
+
 .aboutus-layout {
   display: flex;
   flex-direction: row;
@@ -186,7 +140,7 @@ html, body {
   gap: 0;
 }
 
-/* LEFT PANEL load-in */
+
 .contacts-panel {
   flex: 1;
   display: flex;
@@ -199,7 +153,7 @@ html, body {
   animation-delay: 0.3s;
 }
 
-/* RIGHT PANEL load-in (slightly later for stagger effect) */
+
 .feedback-panel {
   max-width: 25%;
   width: 25%;
@@ -227,14 +181,10 @@ html, body {
   box-shadow: 0 8px 32px rgba(205, 2, 2, 0.6);
 }
 
-/* Each contact row fades up one by one */
 .alignhorizontal:nth-child(1) { opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 0.7s; }
 .alignhorizontal:nth-child(2) { opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 0.85s; }
 .alignhorizontal:nth-child(3) { opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 1.0s; }
 
-/* =====================
-   TYPOGRAPHY
-   ===================== */
 .section-title {
   border-bottom: 2px solid white;
   padding-bottom: 10px;
@@ -268,10 +218,6 @@ html, body {
   box-shadow: 0 8px 8px -8px rgba(205, 2, 2, 1);
 }
 
-/* =====================
-   CONTACT ICONS & HOVER
-   ===================== */
-
 .alignhorizontal {
   display: flex;
   align-items: center;
@@ -285,37 +231,22 @@ html, body {
   margin: 0;
   font-size: 15px;
   color: rgba(205, 2, 2, 0.85);
-
-  /* 
-   * HOW THE UNDERLINE ANIMATION WORKS:
-   * We don't use a real text-decoration underline here.
-   * Instead we use a CSS trick with a pseudo-element (::after).
-   * The ::after element is an invisible box sitting below the text.
-   * It starts with width: 0 (invisible) and animates to width: 100%.
-   * This creates the "draws in from left to right" effect.
-   * The animation runs once on page load (forwards = stays at final state).
-   */
-  position: relative;  /* needed so ::after can position itself relative to the text */
+  position: relative;
   display: inline-block;
   transition: font-size 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3 ease;
 }
 
-/* 
- * THE UNDERLINE PSEUDO-ELEMENT:
- * ::after creates a fake element after the text content.
- * We give it a height (thickness), a colour, and start it at width: 0.
- * The animation "underlineReveal" grows it from 0 → 100% width.
- */
+
 .alignhorizontal p::after {
-  content: '';               /* required for pseudo-elements to appear */
-  position: absolute;        /* positioned relative to the <p> above */
-  bottom: -2px;              /* sit just below the text */
-  left: 0;                   /* start from the left edge */
-  width: 0;                  /* starts invisible (zero width) */
-  height: 1.5px;             /* thickness of the underline */
+  content: '';
+  position: absolute;
+  bottom: -2px;              
+  left: 0;                   
+  width: 0;                  
+  height: 1.5px;             
   background-color: rgba(205, 2, 2, 0.75);
-  animation: underlineReveal 1.2s ease forwards; /* run once, stay at end */
-  animation-delay: 0.6s;    /* slight delay so page loads first */
+  animation: underlineReveal 1.2s ease forwards;
+  animation-delay: 0.6s;    
 }
 
 .alignhorizontal a {
@@ -418,9 +349,6 @@ html, body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M21.8 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.2 4 12 4 12 4s-4.2 0-7 .3c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 8.7 2 10.3v1.4c0 1.5.2 3.1.2 3.1s.2 1.4.8 2c.8.8 1.8.8 2.2.9C6.8 17.9 12 18 12 18s4.2 0 7-.3c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.5.2-3.1v-1.4c0-1.6-.2-3.1-.2-3.1z'/%3E%3Cpolygon fill='%23fff' points='10,8.5 10,15.5 16,12'/%3E%3C/svg%3E");
 }
 
-/* =====================
-   BEST PLAN SECTION
-   ===================== */
 .aboutus-layout--border {
   border-bottom: 2px solid white;
   padding-bottom: 30px;
@@ -456,11 +384,6 @@ html, body {
     0 0 24px rgba(205, 2, 2, 0.5);
 }
 
-/* =====================
-   RESPONSIVE
-   On screens 900px or narrower, the side-by-side layout
-   would be too cramped, so we stack the panels vertically.
-   ===================== */
 @media (max-width: 900px) {
   .aboutus-layout {
     flex-direction: column;
@@ -484,10 +407,6 @@ html, body {
     padding-left: 0;
   }
 }
-
-/* =====================
-   ANIMATIONS
-   ===================== */
 
 /* Navbar fade + drop (already applied to .navbar above) */
 @keyframes fadeIn {
@@ -541,10 +460,6 @@ html, body {
       0 0 30px rgba(255, 0, 0, 0.4);
   }
 }
-/* =====================
-   FEEDBACK FORM
-   ===================== */
-
 .feedback-form {
   display: flex;
   flex-direction: column;
@@ -609,7 +524,7 @@ html, body {
   min-height: 130px;
 }
 
-/* ---- Submit button ---- */
+/* Submit button */
 .feedback-submit {
   align-self: flex-start;
   background-color: rgba(205, 2, 2, 0.9);
@@ -645,12 +560,12 @@ html, body {
   box-shadow: 0 0 6px rgba(205, 2, 2, 0.5);
 }
 
-/* ---- Form hidden after submit ---- */
+/* Form hidden after submit */
 .feedback-form.hidden {
   display: none;
 }
 
-/* ---- Success message ---- */
+/* Success message */
 .feedback-success {
   font-family: 'Poppins', sans-serif;
   font-size: 25px;

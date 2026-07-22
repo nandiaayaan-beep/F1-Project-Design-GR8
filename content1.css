@@ -160,7 +160,6 @@ html, body {
      --facts-width: max(220px, calc(15vw - 20px));
  }
 
-/* ── Sidebar animations ─────────────────────────────────────────── */
 @keyframes slideIn {
     0%   { transform: translateX(-125%); }
     100% { transform: translateX(0%);   }

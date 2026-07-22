@@ -23,10 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
+    const feedback = messageInput.value.trim();
 
-    if (name === "" || email === "" || message === "") {
+    if (name === "" || email === "" || feedback === "") {
       alert("Please fill in all fields");
+      return;
+    }
+
+    const domainPart = email.split("@")[1];
+    if (domainPart && domainPart.split(".").length !== 2) {
+      alert("Please enter a valid email with one domain extension");
       return;
     }
 
@@ -37,29 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const domainPart = email.split("@")[1];
-    if (domainPart && domainPart.split(".").length !== 2) {
-      alert("Please enter a valid email with one domain extension");
-      return;
-    }
-
     const supabaseUrl = "https://tdoiwxffaoxexompcqmp.supabase.co/rest/v1/feedback";
     const apiKey = "sb_publishable_YBxg6PdcA9I9_b5efyupmg_FbUI3fqg";
-
+w
     try {
 
       const response = await fetch(supabaseUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "apikey": apiKey,
+          "apikey": (apiKey),
           "Authorization": `Bearer ${apiKey}`,
           "Prefer": "return=minimal"
         },
         body: JSON.stringify({
           name: name,
           email: email,
-          feedback: message
+          feedback: feedback
         })
       });
 
