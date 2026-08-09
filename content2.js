@@ -84,7 +84,7 @@ function assignDriverFlags() {
         if (!nameEl || !flagImg) return;
 
         const driverName = nameEl.textContent.trim();
-        const isoCode    = driverFlags[driverName];
+        const isoCode  = driverFlags[driverName];
 
         if (isoCode) {
             flagImg.src = `https://flagcdn.com/w80/${isoCode}.png`;
